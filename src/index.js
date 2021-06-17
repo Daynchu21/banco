@@ -1,35 +1,18 @@
-import React from 'react';
-import { render } from 'react-dom'
-import todoApp from './reducers'
-import Root from './rutas/roots'
-import Login from "./components/login/login.jsx"
-import { Provider } from 'react-redux'
-import { Route, Switch } from 'react-router' // react-router v4/v5
-import { ConnectedRouter } from 'connected-react-router'
-import configureStore, { history } from './store/configureStore'
-
-const store = configureStore(/* provide initial state if any */)
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import store from "./store";
+import * as serviceWorker from "./serviceWorker";
+import { AppRouter } from "./routes/AppRouter";
 
 ReactDOM.render(
   <Provider store={store}>
-    <ConnectedRouter history={history}> { /* place ConnectedRouter under Provider */ }
-      <> { /* your usual react-router v4/v5 routing */ }
-        <Switch>
-          <Route exact path="/" render={() => (<div>Match</div>)} />
-          <Route render={() => (<div>Miss</div>)} />
-        </Switch>
-      </>
-    </ConnectedRouter>
+    <AppRouter />
   </Provider>,
-  document.getElementById('react-root')
-)
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <Login/>
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// );
+  document.getElementById("root")
+);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+// If you want your app to work offline and load faster, you can chađinge
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+serviceWorker.register();
