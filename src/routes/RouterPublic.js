@@ -1,6 +1,6 @@
 import React from "react";
 
-import AuthPage from "../components/login/login";
+import AuthPage from "../components/login/login.jsx";
 
 import { Router, Redirect, Switch, Route } from "react-router-dom";
 
