@@ -25,7 +25,7 @@ export default function Login() {
         query: '(max-device-width: 1224px)'
     })
     
-const isBigScreen = useMediaQuery({ query: '(min-device-width: 1824px)' })
+// const isBigScreen = useMediaQuery({ query: '(min-device-width: 1824px)' })
    const [Enviado,SetEnviado] = useState(false)
 //    const { isLoggedIn } = useSelector((state) => state.auth);
 //    const { message } = useSelector((state) => state.message);
