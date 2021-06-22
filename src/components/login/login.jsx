@@ -132,7 +132,7 @@ return(
                 <input type="checkbox" name="my-checkbox" id="opt-in" />
                 </div>
                 <div className="right_check">
-                <label>Recordar mi usuario</label>
+                <label className="text_check">Recordar mi usuario</label>
                 </div>
                 </div>
                 <div className="form-group" >
