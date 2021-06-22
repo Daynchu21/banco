@@ -1,0 +1,83 @@
+@import './colors';
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+$font-family-OB: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen","Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",sans-serif;
+$font-size-text-but-24: 24px;
+$font-size-text-but-18: 18px;
+$font-size-text-but-16: 16px;
+$font-size-text-but-14: 14px;
+$font-size-text-but-12: 13px;
+
+$font-size-h1: 24px;
+$font-size-h2: 18px;
+$font-size-h3: 16px;
+$font-size-h4: 14px;
+$font-size-h5: 12px;
+
+h1 {
+    font-family: $font-family-OB;
+    font-style: normal;
+    font-weight: 500;
+    font-size: $font-size-h1;
+    line-height: 32px;
+
+    color: $color-grey-dark-OB;
+
+    width: 180px;
+    height: 64px;
+    left: 552px;
+    top: 260px;
+}
+
+.h1Medium {
+     font-style: medium;
+ }
+
+ h2 {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    
+}
+
+.h2Medium {
+    font-style: medium;
+}
+
+h3 {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.h3Medium {
+    font-style: medium;
+}
+
+h4 {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    
+}
+
+.h4Medium {
+    font-style: medium;
+}
+
+h5 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    
+}
+
+.h5Medium {
+    font-style: medium;
+}
+

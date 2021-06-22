@@ -1,0 +1,38 @@
+@use './../../styles/buttons';
+@use './../../styles/colors';
+@use './../../styles/thypography';
+
+.divLogin {
+    position: absolute;
+    width: 432px;
+    height: 606px;
+    left: 504px;
+    top: 212px;
+
+    background: #FFFFFF;
+    border-radius: 8px;
+}
+
+.container_check {
+    width: 400px;
+    height: 150px;
+}
+
+.right_check{
+    float: right;
+    display: inline-block;
+    height: 100%;
+    width: 30%;
+}
+
+.left_check{
+    float: left;
+    display: inline-block;
+    height: 100%;
+    width: 70%;
+    overflow: hidden;
+}
+
+.text_check{
+    color: #9B9B9B
+}
