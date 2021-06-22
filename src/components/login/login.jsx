@@ -24,6 +24,7 @@ export default function Login() {
       const isTabletOrMobileDevice = useMediaQuery({
         query: '(max-device-width: 1224px)'
       })
+const isBigScreen = useMediaQuery({ query: '(min-device-width: 1824px)' })
    const [Enviado,SetEnviado] = useState(false)
 //    const { isLoggedIn } = useSelector((state) => state.auth);
 //    const { message } = useSelector((state) => state.message);
@@ -79,10 +80,10 @@ export default function Login() {
 }
 
 return(
-    <div>
+    <div >
     {isDesktopOrLaptop && <>
     {/* <div> style={{width: "1440px",height: "1024px",color:"black", backgroundColor:"black"}}> */}
-    <div   style={{backgroundColor:"black"}}>
+    <div   >
         <HeaderComponent />
         <div className="container">
             <form name="form" onSubmit={handleSubmit}>
