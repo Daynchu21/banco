@@ -6,6 +6,8 @@ import { useDispatch } from "react-redux";
 import { login } from "../../actions/auth";
 import { useMediaQuery } from 'react-responsive'
 
+import HeaderComponent from "./../modulos/header/header"
+import FooterComponent from '../modulos/footer/footer';
 // const axios = require('axios');
 // const Swal = require('sweetalert2')
 
@@ -79,9 +81,11 @@ export default function Login() {
 return(
     <div>
     {isDesktopOrLaptop && <>
-    <div style={{width: "1440px",height: "1024px",color:"black"}}>
-        <div style={{color: "white",width: "432px",height: "606px",left: "504px",top: "212px",background: "white"}}>
-            <form name="form" onSubmit={handleSubmit} >
+    {/* <div> style={{width: "1440px",height: "1024px",color:"black", backgroundColor:"black"}}> */}
+    <div   style={{backgroundColor:"black"}}>
+        <HeaderComponent />
+        <div className="container">
+            <form name="form" onSubmit={handleSubmit}>
             <h1 style={{margin:"16px"}}>
                 ¡Bienvenido a Office Banking!
                 </h1>
@@ -98,7 +102,7 @@ return(
                     }
                 </div>
                 <input type="checkbox" name="my-checkbox" id="opt-in" />
-                <label for="opt-in">Ingrese Contraseña</label>
+                <label for="opt-in" >Recordar mi Usuario</label>
                 
                 <div className="form-group" >
                     {/* <button className="btn btn-primary" >Login</button> */}
@@ -106,7 +110,8 @@ return(
                     <Button name="botonBlanco" text="Crear cuenta empresa" />                     
                 </div>
             </form>
-        </div>
+            </div>
+            <FooterComponent />
     </div>
     </>}
     {isTabletOrMobileDevice &&
@@ -136,8 +141,8 @@ return(
                 </div>
                 </div>
                 <div className="form-group" >
-                    {/* <button className="btn btn-primary" >Login</button> */}
                     <Button name="botonVerde" text="Iniciar sesión"/> 
+                    <h1>¿Tenes problema para el inicio de sesion?</h1>
                     <Button name="botonBlanco" text="Crear cuenta empresa" />                     
                 </div>
             </form>

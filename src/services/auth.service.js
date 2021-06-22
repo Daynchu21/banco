@@ -8,9 +8,9 @@ export const register = (data) => {
 };
 
 export const AuthLogin = (username, password) => {
-  return axios.post(API_URL + "auth/signin", {
-    email: username,
-    password,
+  return axios.post("http://backend-unificado-canales-desa.appd.bh.com.ar/ob/api/login", {
+    usuario: username,
+    clave: password
   });
 };
 
