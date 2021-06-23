@@ -1,6 +1,6 @@
 @import './../../styles/buttons';
 @import './../../styles/colors';
-@import './../../styles/_thypography';
+@import './../../styles/thypography';
 
 .divLogin {
     position: absolute;
@@ -38,8 +38,11 @@
 }
 
 .container{
+    background-image: url("../../assets/imagenes/fondo.png");
     min-height: 100vh;
-    min-width: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+     min-width: 100vh;
 }
 
 .containerform {

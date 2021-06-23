@@ -18,6 +18,11 @@ export const AppRouter = () => {
           component={RouterPublic}
           isAuthenticated={isLoggedIn}
         />
+         <PublicRoute
+          path="/MultipleCuit"
+          component={RouterPublic}
+          isAuthenticated={isLoggedIn}
+        />
         <PrivateRoute
           exact
           path="/"
