@@ -6,3 +6,20 @@ header {
     background: $color-green-OB;
     //transform: matrix(1, 0, 0, -1, 0, 0);
 }
+
+#logo{
+        margin: all;
+        padding-left:24px;
+        padding-top: 26px;  
+        padding-bottom: 26px;
+        width:114.46px;
+        height: 40px;
+        background: url(./../../../assets/iconos/Logo.svg)no-repeat right;
+        float: left;
+}
+
+.posicion_header{
+    position: static;
+    top: 50%;
+    left: 50%;
+}

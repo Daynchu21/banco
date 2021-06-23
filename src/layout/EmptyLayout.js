@@ -6,7 +6,7 @@ import "../styles/_main.scss";
 
 const EmptyLayout = ({ children, ...restProps }) => (
   <main className="main-app" {...restProps}>
-    <Content fluid>{children}</Content>
+    <Content >{children}</Content>
   </main>
 );
 

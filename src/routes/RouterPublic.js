@@ -1,6 +1,6 @@
 import React from "react";
 
-import Login from "../components/login/login.jsx";
+import Login from "../components/login/login.js";
 import { Router, Redirect, Switch } from "react-router-dom";
 import { history } from "../helpers/history";
 import { EmptyLayout, LayoutRoute } from "../layout/index.js";

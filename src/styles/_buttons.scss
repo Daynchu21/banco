@@ -3,9 +3,50 @@
 
 $border-radius-OB: 8px;
 
+/* Auto Layout */
+
+.botonInvisible {
+    background: $color-white-OB;
+				 
+    //display: flex;
+    flex-direction: row;
+    //justify-content: center;
+    align-items: center;
+    //padding: 12px 16px;
+    //margin: 16px;
+    // position: absolute;
+    width: 336px;
+    height: 48px;
+    //left: 552px;
+    //top: 722px;
+
+    border: 1px solid $color-white-OB;
+    
+    border: {
+        radius: $border-radius-OB;
+    }
+
+    //color texto
+    color: $color-green-OB;       
+    font: {
+        family: $font-family-OB;
+        size: $font-size-text-but-16;
+        style: normal;
+		width: 336px;
+        height: 48px;
+        left: 552px;
+        top: 722px;			 
+        weight: 500;
+        size: $font-size-text-but-16;
+    }
+}
+.botonInvisible:hover {
+    color: $color-blue-light-OB;
+}
+
 .botonVerde {
     background: $color-green-OB;
-    margin: 16px;
+    margin-bottom: 16px;
     // display: flex;
     flex-direction: row;
     // justify-content: space-between;
@@ -74,7 +115,7 @@ button:disabled {
     //justify-content: center;
     align-items: center;
     //padding: 12px 16px;
-    margin: 16px;
+    margin-bottom: 16px;
     // position: absolute;
     width: 336px;
     height: 48px;
@@ -114,8 +155,8 @@ button:disabled {
 }
 
 input {
-    margin: 16px;
-    display: flex;
+    margin-bottom: 16px;
+    // display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -134,17 +175,24 @@ input {
     font-family: $font-family-OB;
 }
 
-input[type="checkbox"] {
-    position: static;
-    width: 20px;
-    height: 20px;
-    left: 0px;
-    //top: calc(50% - 20px/2);
 
-    border: 1px solid $color-grey-light-OB;
-    box-sizing: border-box;
-    border-radius: 4px;
+ input[type="checkbox"] {
+// //    position: static;
+     width: 20px;
+     height: 20px;
+//     left: 0px;
+//     //top: calc(50% - 20px/2);
 
-     margin: 16px;
-}
+//     border: 1px solid $color-grey-light-OB;
+//     box-sizing: border-box;
+//     border-radius: 4px;
 
+//     margin-bottom: 16px;
+//     margin-right: 8px;
+ }
+
+ input {
+     font-family: $font-family-OB;
+ }
+
+ 

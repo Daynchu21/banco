@@ -1,7 +1,39 @@
 @import '../../../styles/colors';
 
 footer {
+    // height: 96px;
+    // display: flex;
+    // align-items: center;
+    // background: $color-white-OB;
+    // place-content: flex-end;
+
     height: 96px;
-    
-    background: $color-green-OB;
+    display: grid;
+    align-items: center;
+    background: #FFFFFF;
+    grid-template-columns: repeat(5, 1fr);
 }
+
+.CBancoHipotecario {
+    width: 165px;
+    height: 16px;
+    left: 24px;
+    top: 968px;
+    
+    font: {
+        family: Roboto;
+        style: normal;
+        size: 14px;
+        weight: normal;
+        line-height: 16px;
+    }
+    
+    color: $color-footer-grey-OB;
+ }
+
+ .posicion{
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+ }

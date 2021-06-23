@@ -1,10 +1,12 @@
 import React from "react";
-import "./header.scss";
+import './header.scss'
 
-export default function HeaderComponent(props) {
+export default function HeaderComponent (props) {
   return (
-    <>
-      <header />
-    </>
+    <div className="posicion_header">
+      <header >
+        <div id="logo"></div>
+      </header>
+      </div>
   );
 }

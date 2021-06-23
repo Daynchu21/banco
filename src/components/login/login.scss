@@ -1,6 +1,6 @@
-@use './../../styles/buttons';
-@use './../../styles/colors';
-@use './../../styles/thypography';
+@import './../../styles/buttons';
+@import './../../styles/colors';
+@import './../../styles/_thypography';
 
 .divLogin {
     position: absolute;
@@ -37,13 +37,80 @@
     color: #9B9B9B;
 }
 
-.container {
+.container{
+    min-height: 100vh;
+    min-width: 100vh;
+}
+
+.containerform {
+    
     //position: absolute;
     width: 432px;
     height: 606px;
     margin-left: auto;
     margin-right:auto;
-
-    background: #ff2222;// #FFFFFF;
+    margin-bottom: 110px;
+    margin-top: 120px;
+    background: $color-white-OB;// #FFFFFF;
     border-radius: 8px;
 } 
+
+.centerTextDiv {
+    margin-top: 48px;
+    margin-bottom: 48px;
+    // padding-top: 48px;
+    padding-top: 20px;
+    padding-bottom: 48px;
+}
+.margenIzquierdo {
+    margin-left: 48px;
+}
+
+.problemasSesion {
+    position: static;
+    width: 274px;
+    height: 19px;
+    left: 31px;
+    top: 14.5px;
+    text-decoration: none;
+    color: $color-green-OB;
+    font: {
+        family: $font-family-OB;
+        font-style: normal;
+        font-weight: 500;
+        size: $font-size-text-but-16;
+        line-height: 19px;
+    }
+        /* identical to box height */
+        
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+        margin: 0px 16px;
+}
+
+hr {
+    // position: absolute;
+width: 432px;
+height: 2px;
+left: 504px;
+top: 696px;
+
+margin-bottom: 24px;
+margin-top: 24px;
+
+border:none;
+
+/* /Gray 100 */
+
+background: #F2F1F1;
+}
+
+label {
+    font-family: $font-family-OB;
+}
+
+.container_check_destokp{
+    display: grid;
+  grid-template-columns: 30px 200px;
+}
