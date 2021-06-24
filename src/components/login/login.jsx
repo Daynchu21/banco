@@ -2,7 +2,7 @@ import './login.scss'
 import './../modulos/button/button.scss'
 import Button from './../modulos/button/button'
 import React,{useState} from 'react'
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../actions/auth";
 import { useMediaQuery } from 'react-responsive'
 import HeaderComponent from "./../modulos/header/header"
@@ -32,7 +32,7 @@ export default function Login() {
 //    const { isLoggedIn } = useSelector((state) => state.auth);
 //    const { message } = useSelector((state) => state.message);
    const dispatch = useDispatch();
-
+   const {data:Mcuit} = useSelector(state => state.user)
 
    const handleChange =(e) =>{
     SetDatosUsuarios({
@@ -85,7 +85,7 @@ export default function Login() {
     return (
     
         <div >
-            {showMcuits ? <Mcuits/> :
+            {Mcuit.estado === "MULTIPLES_CUITS" ? <Mcuits/> :
     isDesktopOrLaptop && <>
     {/* <div> style={{width: "1440px",height: "1024px",color:"black", backgroundColor:"black"}}> */}
     <div className="container">
