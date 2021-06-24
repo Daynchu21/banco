@@ -2,13 +2,15 @@ import './login.scss'
 import './../modulos/button/button.scss'
 import Button from './../modulos/button/button'
 import React,{useState} from 'react'
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../actions/auth";
 import { useMediaQuery } from 'react-responsive'
-import { Redirect } from 'react-router'
 import HeaderComponent from "./../modulos/header/header"
 import FooterComponent from '../modulos/footer/footer';
 // const axios = require('axios');
+import { Link } from "react-router-dom"
+import Mcuits from "../../components/multiple-cuit/multipleCuitComponent.js";
+
 // const Swal = require('sweetalert2')
 
 
@@ -18,6 +20,7 @@ export default function Login() {
         Usuario: '',
         Pass: ''
     })
+    const [showMcuits,setShowMcuits] = useState(false)
     const isDesktopOrLaptop = useMediaQuery({
         query: '(min-device-width: 1224px)'
     })
@@ -29,7 +32,7 @@ export default function Login() {
 //    const { isLoggedIn } = useSelector((state) => state.auth);
 //    const { message } = useSelector((state) => state.message);
    const dispatch = useDispatch();
-
+   const {data:Mcuit} = useSelector(state => state.user)
 
    const handleChange =(e) =>{
     SetDatosUsuarios({
@@ -80,9 +83,11 @@ export default function Login() {
 
 }
 
-return(
-    <div >
-    {isDesktopOrLaptop && <>
+    return (
+    
+        <div >
+            {Mcuit.estado === "MULTIPLES_CUITS" ? <Mcuits/> :
+    isDesktopOrLaptop && <>
     {/* <div> style={{width: "1440px",height: "1024px",color:"black", backgroundColor:"black"}}> */}
     <div className="container">
         <HeaderComponent />
@@ -122,8 +127,9 @@ return(
            
             </div>
 
-            <div className="BotonNempresa">
-                    <Button name="botonBlanco" text="Crear Cuenta Empresa" />
+                <div className="BotonNempresa">
+                    <Link className="botonBlanco" to="/MultipleCuit" title="Crear Cuenta Empresa" > NAVEGAR A CUENTA EMPRESA</Link>
+                    <Button name="botonBlanco" onClick={()=>setShowMcuits(true)} text="Crear Cuenta Empresa" />
                     </div>
             
             <FooterComponent />
@@ -169,7 +175,7 @@ return(
            
             </div>
             <div className="BotonNempresa">
-                    <Button name="botonBlanco" text="Crear Cuenta Empresa" />
+                    <Button  name="botonBlanco" text="Crear Cuenta Empresa" />
                     </div>
             
             {/* <FooterComponent /> */}
