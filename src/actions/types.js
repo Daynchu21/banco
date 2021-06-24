@@ -3,6 +3,7 @@ export const REGISTER_FAIL = "REGISTER_FAIL";
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const LOGIN_FAIL = "LOGIN_FAIL";
 export const LOGOUT = "LOGOUT";
+export const LOGIN_MULTIPLE_CUIT = "LOGIN_MULTIPLE_CUIT";
 
 /**mensajeria */
 export const SET_MESSAGE = "SET_MESSAGE";
