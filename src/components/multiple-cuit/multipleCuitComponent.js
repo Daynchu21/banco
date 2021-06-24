@@ -19,29 +19,21 @@ export default function Mcuits(){
     return(
         <div>
             <HeaderComponent />
-                <div>
-                </div>
                 <div className="containerformMC">
                 <h1 className="item1">¿Con qué empresa querés operar?</h1>
-                <div></div>
-                <div></div>
-                <div></div>
+                <div className="ButonInterno">
                 <div className=""><Button name="botonEmpresa" text="Empresa 1" /></div>
                 <div className=""><Button name="botonEmpresa" text="Empresa 2" /></div>
                 <div className=""><Button name="botonEmpresa" text="Empresa 3" /></div>
-                {/* <div className="grid-item"><Button name="botonEmpresa" text="Empresa 4" /></div>
-                <div className="grid-item"><Button name="botonEmpresa" text="Empresa 5" /></div>
-                <div className="grid-item"><Button name="botonEmpresa" text="Empresa 6" /></div> */}
-                <div></div>
-                <div></div>
-                <div></div>
+                </div>
                 <div className="containerformBTN">
-            
             <div><Button name="botonCerrarSesion" text="Cerrar sesión" /></div>
             <div><Button name="botonSiguiente" text="Seleccionar" /></div>
             </div>
+                {/* <div className="grid-item"><Button name="botonEmpresa" text="Empresa 4" /></div>
+                <div className="grid-item"><Button name="botonEmpresa" text="Empresa 5" /></div>
+                <div className="grid-item"><Button name="botonEmpresa" text="Empresa 6" /></div> */}
             </div>
-            
         </div>
     )
 }

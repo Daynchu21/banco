@@ -5,7 +5,7 @@ import React,{useState} from 'react'
 import { useDispatch } from "react-redux";
 import { login } from "../../actions/auth";
 import { useMediaQuery } from 'react-responsive'
-
+import { Redirect } from 'react-router'
 import HeaderComponent from "./../modulos/header/header"
 import FooterComponent from '../modulos/footer/footer';
 // const axios = require('axios');
@@ -50,8 +50,9 @@ export default function Login() {
     {
         dispatch(login(DatosUsuario.Usuario,DatosUsuario.Pass))
         .then(() => {
+          return  <Redirect to="/MultipleCuit"/>
             // props.history.push("/");
-            window.location.reload();
+          //  window.location.reload();
           })
           .catch(() => {
            

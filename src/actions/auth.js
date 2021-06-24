@@ -3,11 +3,13 @@ import { AuthLogin, AuthLogout } from "../services/auth.service";
 import { history } from "../helpers/history";
 
 
+
 export const login = (username, password) => (dispatch) => {
 
   return AuthLogin(username, password).then(
     ({ data }) => {
       //console.log(PropTypes.object)
+      
       debugger
       if(data.estado === "0")
       {
