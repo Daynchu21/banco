@@ -3,6 +3,8 @@ import HeaderComponent from './../modulos/header/header'
 // import FooterComponet from './../modulos/footer/footer'
 import Button from './../modulos/button/button'
 import "./multipleCuitComponent.scss"
+import { useMediaQuery } from 'react-responsive'
+
 
 export default function Mcuits(){
 

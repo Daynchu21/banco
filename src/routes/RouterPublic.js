@@ -10,6 +10,9 @@ import { EmptyLayout, LayoutRoute } from "../layout/index.js";
 
 export const RouterPublic = () => {
   return (
+    /**Se hizo el cambio a hashROuter para manejar rutas fisicas en el redirect. En rutas privadas
+     * utilizar rutas normales.
+     */
     <HashRouter>
       <Switch>
         {/*Se cambia a layoute route para incluir estilos globales como temas en las rutas */}
