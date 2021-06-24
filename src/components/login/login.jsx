@@ -1,12 +1,12 @@
 import './login.scss'
 import './../modulos/button/button.scss'
-import Button from '../modulos/button/button'
+import Button from './../modulos/button/button'
 import React,{useState} from 'react'
 import { useDispatch } from "react-redux";
 import { login } from "../../actions/auth";
 import { useMediaQuery } from 'react-responsive'
 
-import HeaderComponent from "../modulos/header/header"
+import HeaderComponent from "./../modulos/header/header"
 import FooterComponent from '../modulos/footer/footer';
 // const axios = require('axios');
 // const Swal = require('sweetalert2')
@@ -24,7 +24,7 @@ export default function Login() {
     const isTabletOrMobileDevice = useMediaQuery({
         query: '(max-device-width: 1224px)'
     })
-const isBigScreen = useMediaQuery({ query: '(min-device-width: 1824px)' })
+    //const isBigScreen = useMediaQuery({ query: '(min-device-width: 1824px)' })
    const [Enviado,SetEnviado] = useState(false)
 //    const { isLoggedIn } = useSelector((state) => state.auth);
 //    const { message } = useSelector((state) => state.message);
@@ -86,83 +86,93 @@ return(
     <div className="container">
         <HeaderComponent />
         <div className="containerform">
-            <form name="form" onSubmit={handleSubmit}>
-            <div className={"centerTextDiv"}>
-            <div className="margenIzquierdo">
-            <h1 >
+            <form name="form" onSubmit={handleSubmit} className="FormContainer">
+                <div className="TextBienvenido">
+                 <h1 className="h1Bienvenida">
                 ¡Bienvenido a Office Banking!
                 </h1>
+                </div>
+
+                <div className="InputsGrow" style={{marginTop:"10px"}}>
                 <div className={'form-group' + ( !DatosUsuario.Usuario ? ' has-error' : '')} >
-                    <input type="text" className="form-control" name="Usuario" placeholder="Usuario"  onChange={handleChange} />
-                    {Enviado && !DatosUsuario.Usuario &&
-                        <div className="help-block" style={{color:"red"}}>Ingrese Usuario</div>
-                    }
+                    <input type="text" className="inputBlanco" name="Usuario" placeholder="Usuario"  onChange={handleChange} />
                 </div>
                 <div className={'form-group' + ( !DatosUsuario.Pass ? ' has-error' : '')} >
-                    <input type="password" className="form-control" name="Pass" placeholder="Contraseña" onChange={handleChange} />
+                    <input type="password" className="inputBlanco" name="Pass" placeholder="Contraseña" onChange={handleChange} />
                     { Enviado && !DatosUsuario.Pass &&
-                        <div className="help-block" style={{color:"red"}}>Ingrese Contraseña</div>
+                        <div className="help-block" style={{color:"red"}}>Los datos ingresados son incorrectos</div>
                     }
                 </div>
+                </div>
+
                 <div  className="container_check_destokp">
                     <div>
                     <input type="checkbox" name="my-checkbox" id="opt-in"></input>
                     </div>
-                    <div style={{paddingTop: "3px"}}>
-                    <label  >Recordar mi Usuario</label>
+                    <div style={{"padding-top": "3px"}}>
+                    <label className="TextRusuario" >Recordar mi Usuario</label>
                     </div>
                 </div>
-                <div className="form-group" >
-                    {/* <button className="btn btn-primary" >Login</button> */}
+                <div className="form-group" style={{marginTop:"20px"}}>
                     <Button name="botonVerde" text="Iniciar sesión"/> 
-                    <Button name="botonBlanco" text="Crear cuenta empresa" />                     
                 </div>
                 <Button name="botonInvisible" text = "¿Tenes problemas para iniciar sesión?" />
-                </div>
-                <hr></hr>
-                <div className="margenIzquierdo">
+            </form>
+           
+            </div>
+
+            <div className="BotonNempresa">
                     <Button name="botonBlanco" text="Crear Cuenta Empresa" />
                     </div>
-                </div>
-            </form>
-            </div>
             
             <FooterComponent />
     </div>
     </>}
     {isTabletOrMobileDevice &&
     
-    <form name="form" onSubmit={handleSubmit} >
-            <h1 style={{margin:"16px"}}>
+    <div>
+                <HeaderComponent />
+    <div className="containerformMobile">
+            <form name="form" onSubmit={handleSubmit} className="FormContainer">
+                <div className="TextBienvenido">
+                 <h1 className="h1Bienvenida">
                 ¡Bienvenido a Office Banking!
                 </h1>
+                </div>
+
+                <div className="InputsGrow" style={{marginTop:"10px"}}>
                 <div className={'form-group' + ( !DatosUsuario.Usuario ? ' has-error' : '')} >
-                    <input type="text" className="form-control" name="Usuario" placeholder="Usuario"  onChange={handleChange} />
-                    {Enviado && !DatosUsuario.Usuario &&
-                        <div className="help-block" style={{color:"red"}}>Ingrese Usuario</div>
-                    }
+                    <input type="text" className="inputBlanco" name="Usuario" placeholder="Usuario"  onChange={handleChange} />
                 </div>
                 <div className={'form-group' + ( !DatosUsuario.Pass ? ' has-error' : '')} >
-                    <input type="password" className="form-control" name="Pass" placeholder="Contraseña" onChange={handleChange} />
+                    <input type="password" className="inputBlanco" name="Pass" placeholder="Contraseña" onChange={handleChange} />
                     { Enviado && !DatosUsuario.Pass &&
-                        <div className="help-block" style={{color:"red"}}>Ingrese Contraseña</div>
+                        <div className="help-block" style={{color:"red"}}>Los datos ingresados son incorrectos</div>
                     }
                 </div>
-                <div className="container_check">
-                    <div className="left_check">
-                <input type="checkbox" name="my-checkbox" id="opt-in" />
                 </div>
-                <div className="right_check">
-                <label className="text_check">Recordar mi usuario</label>
-                </div>
-                </div>
-                <div className="form-group" >
-                    <Button name="botonVerde" text="Iniciar sesión"/> 
-                    <h1>¿Tenes problema para el inicio de sesion?</h1>
-                    <Button name="botonBlanco" text="Crear cuenta empresa" />                     
-                </div>
-            </form>
 
+                <div  className="container_check_destokp">
+                    <div>
+                    <input type="checkbox" name="my-checkbox" id="opt-in"></input>
+                    </div>
+                    <div style={{"padding-top": "3px"}}>
+                    <label className="TextRusuario" >Recordar mi Usuario</label>
+                    </div>
+                </div>
+                <div className="form-group" style={{marginTop:"20px"}}>
+                    <Button name="botonVerde" text="Iniciar sesión"/> 
+                </div>
+                <Button name="botonInvisible" text = "¿Tenes problemas para iniciar sesión?" />
+            </form>
+           
+            </div>
+            <div className="BotonNempresa">
+                    <Button name="botonBlanco" text="Crear Cuenta Empresa" />
+                    </div>
+            
+            {/* <FooterComponent /> */}
+        </div>
     }
     </div>
 ) 

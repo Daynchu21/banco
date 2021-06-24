@@ -7,11 +7,12 @@ footer {
     // background: $color-white-OB;
     // place-content: flex-end;
 
-    height: 96px;
+    height:  6em;
     display: grid;
     align-items: center;
     background: #FFFFFF;
-    grid-template-columns: repeat(5, 1fr);
+    // grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: 25% 20% 20% 20% 15%;
 }
 
 .CBancoHipotecario {
@@ -33,7 +34,7 @@ footer {
 
  .posicion{
     width: 100%;
-    position: absolute;
+    position: fixed;
     bottom: 0px;
     left: 0;
  }

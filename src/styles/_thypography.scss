@@ -24,10 +24,6 @@ h1 {
 
     color: $color-grey-dark-OB;
 
-    width: 180px;
-    height: 64px;
-    left: 552px;
-    top: 260px;
 }
 
 .h1Medium {
@@ -35,6 +31,7 @@ h1 {
  }
 
  h2 {
+    font-family: $font-family-OB;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;

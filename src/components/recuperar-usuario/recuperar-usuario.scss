@@ -1,0 +1,168 @@
+@import './../../styles/colors';
+@import './../../styles/buttons';
+@use './../../styles/thypography';
+
+.containerformMC {
+    display: grid;
+    background-color: white;
+
+    width: 432px;
+    height: 368px;
+    border-radius: 8px;
+    align-items: center;    
+    margin-left: 13.625em;//218px;
+    margin-top: 7.500em;//120px;
+    padding-left: 2.000em;//32px;
+    
+    
+} 
+
+.h1QueEmpresa {
+    //position: absolute;
+    width: 396px;
+    height: 28px;
+    margin-left: 250px;
+    top: 247px;
+}
+
+.grid-container {
+    display: grid;
+  }
+
+.labletam {
+    width: 3356px;
+    height: 556px;   
+}
+
+.botonEmpresa {
+        background: $color-white-OB;
+        border: 1px solid $color-grey-light-OB;
+        border-radius: $border-radius-OB;    
+        box-sizing: border-box;
+        //color texto
+        color: $color-grey-dark-OB;       
+        font: {
+            family: $font-family-OB;
+            size: $font-size-text-but-16;
+            style: normal;
+            width: 336px;
+            height: 48px;
+            left: 552px;
+            top: 722px;			 
+            weight: 500;
+            size: $font-size-text-but-16;
+        }
+                             
+        width: 250px;
+        height: 81px;
+        padding-left: 0px;
+        padding-top: 0px;
+}
+
+.botonEmpresa:active {
+    border: 1px solid $color-green-OB;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+.botonEmpresa:focus{
+    border: 1px solid $color-green-OB;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+.botonEmpresa:disabled {
+    background: $color-grey-light-OB;
+}
+.item1 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+.gridBotones {
+    display: grid;
+    grid-template-columns: auto auto ;
+   
+}
+
+.botonCerrarSesion {
+    // display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    // padding: 12px 16px;
+
+    width: 180px;
+    height: 48px;
+    left: 250px;
+    top: 452px;
+
+    border: 1px solid $color-green-OB;
+    box-sizing: border-box;
+    border: {
+        radius: $border-radius-OB;
+    }
+
+    color: $color-green-OB;       
+    font: {
+        family: $font-family-OB;
+        size: $font-size-text-but-16;
+        style: normal;
+		width: 336px;
+        height: 48px;
+        left: 552px;
+        top: 722px;			 
+        weight: 500;
+        size: $font-size-text-but-16;
+    }
+    background-color: $color-white-OB;
+
+}
+
+.botonCerrarSesion:hover {
+    border: 1px solid $color-blue-light-OB;
+    color: $color-blue-light-OB;
+}
+
+.botonSiguiente {
+        background: $color-green-OB;
+        border: none;
+        border-radius: $border-radius-OB;
+    
+        font-family: $font-family-OB;
+        color: $color-white-OB;
+        font: {
+            style: medium;
+            width: 96px;
+            height: 19px;
+            left: 120px;
+            top: 14.5px;
+            weight: 500;
+            size: $font-size-text-but-16;
+        }
+        // line-height: 19px;
+
+        // display: flex;
+        // flex-direction: row;
+        // justify-content: center;
+        // align-items: center;
+        // padding: 12px 16px;
+
+        // position: absolute;
+        width: 180px;
+        height: 48px;
+        left: 446px;
+        top: 452px;
+
+}
+
+.botonSiguiente:hover {
+    background: $color-blue-light-OB;
+}
+
+.containerformBTN {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    // grid-gap: 10px;
+    display: grid;
+    //grid-auto-rows: minmax(100px, auto);
+    background-color: $color-white-OB;
+}

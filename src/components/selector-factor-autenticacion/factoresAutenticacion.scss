@@ -1,0 +1,95 @@
+@import './../../styles/colors';
+@import './../../styles/buttons';
+
+.containerformFA {
+    display: grid;
+    // grid-template-columns: auto auto auto;
+    // grid-gap: 10px;
+    display: grid;
+    // grid-auto-rows: minmax(100px, auto);
+    background-color: white;
+
+    width: 1004px;
+    height: 207px;
+    
+    // background: #FFFFFF;
+    align-items: center;    
+    // grid-auto-rows: min-content;
+    margin-left: 13.625em;//218px;
+    margin-top: 7.500em;//120px;
+    padding-left: 2.000em;//32px;
+    // padding-top: 35px;
+    //align-items: center;
+
+    left: 218px;
+    top: 212px;
+    
+} 
+
+.h1QueEmpresa {
+    //position: absolute;
+    width: 396px;
+    height: 28px;
+    margin-left: 250px;
+    top: 247px;
+}
+
+.grid-container {
+    display: grid;
+  }
+
+.labletam {
+    width: 3356px;
+    height: 556px;   
+}
+
+.botonFA {
+    
+    width: 302.67px;
+    height: 51px;
+    background: $color-white-OB;
+    border: 1px solid $color-grey-light-OB;
+    border-radius: $border-radius-OB;    
+    box-sizing: border-box;
+    //color texto
+    color: $color-black-OB;       
+    font: {
+        family: $font-family-OB;
+        size: $font-size-text-but-16;
+        style: bold;
+        width: 126px;
+        height: 19px;
+        left: 16px;
+        top: 16px;
+        weight: bold;
+        size: $font-size-text-but-16;
+    }
+                            
+}
+
+.botonFA:active {
+    border: 1px solid $color-green-OB;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+.botonFA:focus{
+    border: 1px solid $color-green-OB;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+.botonEmpresa:disabled {
+    background: $color-grey-light-OB;
+}
+.itemPorblemasSesion {
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
+.gridBotones {
+    display: grid;
+    grid-template-columns: auto auto ;
+}
+
+.OrientacionIzq {
+    text-align-last: left;
+}

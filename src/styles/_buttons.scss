@@ -155,19 +155,6 @@ button:disabled {
 }
 
 input {
-    margin-bottom: 16px;
-    // display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px;
-
-    // position: absolute;
-    width: 336px;
-    height: 56px;
-    left: 552px;
-    top: 356px;
-
     border: 1px solid #9B9B9B;
     box-sizing: border-box;
     border-radius: $border-radius-OB;
