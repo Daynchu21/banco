@@ -2,15 +2,17 @@ import './login.scss'
 import './../modulos/button/button.scss'
 import Button from './../modulos/button/button'
 import React,{useState} from 'react'
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch,useSelector } from "react-redux";
 import { login } from "../../actions/auth";
 import { useMediaQuery } from 'react-responsive'
-import HeaderComponent from "./../modulos/header/header"
-import FooterComponent from '../modulos/footer/footer';
-// const axios = require('axios');
-import { Link } from "react-router-dom"
-import Mcuits from "../../components/multiple-cuit/multipleCuitComponent.js";
+import { Redirect } from "react-router-dom";
 
+import HeaderComponent from "./../modulos/header/header"
+import HeaderComponentMobile from "./../modulos/headerMobile/headerMobile.js"
+
+import FooterComponent from '../modulos/footer/footer';
+import FooterComponentMobile from '../modulos/footerMobile/footerMobile.js'
+// const axios = require('axios');
 // const Swal = require('sweetalert2')
 
 
@@ -20,7 +22,6 @@ export default function Login() {
         Usuario: '',
         Pass: ''
     })
-    const [showMcuits,setShowMcuits] = useState(false)
     const isDesktopOrLaptop = useMediaQuery({
         query: '(min-device-width: 1224px)'
     })
@@ -29,10 +30,12 @@ export default function Login() {
     })
     //const isBigScreen = useMediaQuery({ query: '(min-device-width: 1824px)' })
    const [Enviado,SetEnviado] = useState(false)
+   const data = useSelector((state) => state.auth )
+
 //    const { isLoggedIn } = useSelector((state) => state.auth);
 //    const { message } = useSelector((state) => state.message);
    const dispatch = useDispatch();
-   const {data:Mcuit} = useSelector(state => state.user)
+
 
    const handleChange =(e) =>{
     SetDatosUsuarios({
@@ -53,9 +56,8 @@ export default function Login() {
     {
         dispatch(login(DatosUsuario.Usuario,DatosUsuario.Pass))
         .then(() => {
-          return  <Redirect to="/MultipleCuit"/>
             // props.history.push("/");
-          //  window.location.reload();
+           // window.location.reload();
           })
           .catch(() => {
            
@@ -83,10 +85,9 @@ export default function Login() {
 
 }
 
-    return (
-    
-        <div >
-            {Mcuit.estado === "MULTIPLES_CUITS" ? <Mcuits/> :
+return(
+    <div >
+    {data.user !== null ? <Redirect to={{pathname: '/MultipleCuit'}}/>   :
     isDesktopOrLaptop && <>
     {/* <div> style={{width: "1440px",height: "1024px",color:"black", backgroundColor:"black"}}> */}
     <div className="container">
@@ -115,7 +116,7 @@ export default function Login() {
                     <div>
                     <input type="checkbox" name="my-checkbox" id="opt-in"></input>
                     </div>
-                    <div style={{"padding-top": "3px"}}>
+                    <div style={{paddingTop: "3px"}}>
                     <label className="TextRusuario" >Recordar mi Usuario</label>
                     </div>
                 </div>
@@ -127,9 +128,8 @@ export default function Login() {
            
             </div>
 
-                <div className="BotonNempresa">
-                    <Link className="botonBlanco" to="/MultipleCuit" title="Crear Cuenta Empresa" > NAVEGAR A CUENTA EMPRESA</Link>
-                    <Button name="botonBlanco" onClick={()=>setShowMcuits(true)} text="Crear Cuenta Empresa" />
+            <div className="BotonNempresa">
+                    <Button name="botonBlanco" text="Crear Cuenta Empresa" />
                     </div>
             
             <FooterComponent />
@@ -138,7 +138,7 @@ export default function Login() {
     {isTabletOrMobileDevice &&
     
     <div>
-                <HeaderComponent />
+                <HeaderComponentMobile />
     <div className="containerformMobile">
             <form name="form" onSubmit={handleSubmit} className="FormContainer">
                 <div className="TextBienvenido">
@@ -163,7 +163,7 @@ export default function Login() {
                     <div>
                     <input type="checkbox" name="my-checkbox" id="opt-in"></input>
                     </div>
-                    <div style={{"padding-top": "3px"}}>
+                    <div style={{paddingTop: "3px"}}>
                     <label className="TextRusuario" >Recordar mi Usuario</label>
                     </div>
                 </div>
@@ -174,11 +174,11 @@ export default function Login() {
             </form>
            
             </div>
-            <div className="BotonNempresa">
-                    <Button  name="botonBlanco" text="Crear Cuenta Empresa" />
+            <div className="BotonNempresaMobile">
+                    <Button name="botonBlanco" text="Crear Cuenta Empresa" />
                     </div>
             
-            {/* <FooterComponent /> */}
+            <FooterComponentMobile />
         </div>
     }
     </div>
