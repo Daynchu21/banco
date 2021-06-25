@@ -2,11 +2,13 @@
 
 .footerMobile {
     
-   // height: 96px;
     display: grid;
-    //align-items: center;
     background: #FFFFFF;
     grid-template-rows: repeat(5, 1fr);
+    justify-items: center;
+    margin: 10px;
+    border-radius: 6px;
+    padding: 20px 0 0 0;
 }
 
 .CBancoHipotecarioMobile {

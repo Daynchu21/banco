@@ -172,6 +172,15 @@ label {
     top: 356px;
 }
 
+.inputBlanco:focus {
+    border: 1px solid #9B9B9B;
+}
+
+.inputBlanco:invalid {
+    border: 1px solid red;
+    color: red;
+}
+
 .TextRusuario{
     color: $color-grey-OB;
 }

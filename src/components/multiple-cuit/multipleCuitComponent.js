@@ -6,6 +6,35 @@ import "./multipleCuitComponent.scss"
 import { useMediaQuery } from 'react-responsive'
 
 
+
+
+// renderUserButtons = () => {
+//     return data.map((userData) => (
+//         <UserButton key="Some-unique-id-can-be-anything" PASS_YOUR_PROPS_HERE/>
+//     ))
+// }
+
+// render() {
+//     return (
+//         <div>
+//             ...
+//             {this.renderUserButtons()}
+//             ...
+//         </div>
+//     );
+// }
+
+function Mbuttons (){
+    return (
+        <button >
+
+        </button>
+        )
+    }
+
+
+
+
 export default function Mcuits(){
 
     const isDesktopOrLaptop = useMediaQuery({
@@ -22,9 +51,11 @@ export default function Mcuits(){
                 <div className="containerformMC">
                 <h1 className="item1">¿Con qué empresa querés operar?</h1>
                 <div className="ButonInterno">
-                <div className=""><Button name="botonEmpresa" text="Empresa 1" /></div>
+                {/* <div className=""><Button name="botonEmpresa" text="Empresa 1" /></div>
                 <div className=""><Button name="botonEmpresa" text="Empresa 2" /></div>
-                <div className=""><Button name="botonEmpresa" text="Empresa 3" /></div>
+                <div className=""><Button name="botonEmpresa" text="Empresa 3" /></div> */}
+
+
                 </div>
                 <div className="containerformBTN">
             <div><Button name="botonCerrarSesion" text="Cerrar sesión" /></div>
