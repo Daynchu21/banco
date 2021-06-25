@@ -1,15 +1,15 @@
 @import '../../../styles/colors';
 
-.footerDestokp {
+.footerMobile {
     
-    height: 96px;
+   // height: 96px;
     display: grid;
-    align-items: center;
+    //align-items: center;
     background: #FFFFFF;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
 }
 
-.CBancoHipotecario {
+.CBancoHipotecarioMobile {
     width: 165px;
     height: 16px;
     left: 24px;
@@ -26,9 +26,7 @@
     color: $color-footer-grey-OB;
  }
 
- .posicion{
+ .posicionMobile{
     width: 100%;
-    position: fixed;
-    bottom: 0px;
-    left: 0;
+   
  }

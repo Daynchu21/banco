@@ -1,0 +1,49 @@
+@import './../../styles/colors';
+@import './../../styles/buttons';
+@use './../../styles/thypography';
+
+.containerformRS {
+    display: grid;
+    background-color: $color-white-OB;
+
+    width: 432px;
+    height: 368px;
+
+    border-radius: 8px;
+    align-items: center;    
+    margin-left: 31.500em;//504px;
+    margin-top: 7.500em;
+    padding-left: 2.000em;//32px;
+} 
+
+.botonAceptarRS {
+    background: $color-green-OB;
+    border: none;
+    border-radius: $border-radius-OB;
+
+    font-family: $font-family-OB;
+    color: $color-white-OB;
+    font: {
+        style: medium;
+        width: 96px;
+        height: 19px;
+        left: 120px;
+        top: 14.5px;
+        weight: 500;
+        size: $font-size-text-but-16;
+    }
+    width: 187px;
+    height: 43px;
+    left: 627px;
+    top: 500px;
+
+}
+
+.botonAceptarRS:hover {
+background: $color-blue-light-OB;
+}
+
+.botonAceptarRS:disabled {
+    background: $color-grey-light-OB;
+    color: $color-white-OB;    
+}

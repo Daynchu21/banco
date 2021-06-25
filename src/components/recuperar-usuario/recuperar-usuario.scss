@@ -9,8 +9,14 @@
     padding: 0.75em 1em 0.75em 1em;
     max-width: 27em;
     max-height: 23em;
-    
 } 
+
+// .containerforRusuarioGrid {
+//     display: grid;
+//     padding: 48px 48px 48px 48px ;
+
+//     // grid-template-columns: 48px 48px 48px 48px;
+// }
 
 .h1QueEmpresa {
     //position: absolute;
@@ -74,7 +80,7 @@
 }
 .gridBotones {
     display: grid;
-    grid-template-columns: auto auto ;
+
    
 }
 
@@ -85,10 +91,10 @@
     align-items: center;
     // padding: 12px 16px;
 
-    width: 180px;
+    width: 160px;
     height: 48px;
-    left: 250px;
-    top: 452px;
+    left: 552px;
+    bottom: 492px;
 
     border: 1px solid $color-green-OB;
     box-sizing: border-box;
@@ -142,10 +148,10 @@
         // padding: 12px 16px;
 
         // position: absolute;
-        width: 180px;
+        width: 160px;
         height: 48px;
-        left: 446px;
-        top: 452px;
+        left: 728px;
+        bottom: 492px;
 
 }
 
@@ -155,9 +161,23 @@
 
 .containerformBTNRecUsuario {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto ;
     // grid-gap: 10px;
     display: grid;
     //grid-auto-rows: minmax(100px, auto);
     background-color: $color-white-OB;
 }
+
+.CuitCuilEmpresa {
+    margin-bottom: 16px;
+    // display: flex;
+    padding: 16px;
+
+    width: 380px;
+    height: 56px;
+    left: 552px;
+    top: 380px;
+}
+
+
+

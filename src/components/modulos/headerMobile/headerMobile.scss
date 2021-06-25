@@ -1,6 +1,6 @@
 @import './../../../styles/colors';
 
-header {
+.headerMobile {
     height: 92px;
 
     background: $color-green-OB;
@@ -18,7 +18,7 @@ header {
         float: left;
 }
 
-.posicion_header{
+.posicion_headerMobile{
     position: static;
     top: 50%;
     left: 50%;
