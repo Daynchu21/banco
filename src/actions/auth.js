@@ -1,5 +1,5 @@
 import { LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT, SET_MESSAGE,LOGIN_MULTIPLE_CUIT } from "./types";
-import { AuthLogin, AuthLogout } from "../services/auth.service";
+import { AuthLogin, AuthLogout,AuthLoginMultiple } from "../services/auth.service";
 import { history } from "../helpers/history";
 
 
@@ -8,9 +8,7 @@ export const login = (username, password) => (dispatch) => {
 
   return AuthLogin(username, password).then(
     ({ data }) => {
-      //console.log(PropTypes.object)
       
-      debugger
       if(data.estado === "0")
       {
       localStorage.setItem("user", JSON.stringify(data));
@@ -60,6 +58,25 @@ export const login = (username, password) => (dispatch) => {
     }
   );
 };
+
+
+export const loginMultiple = (username, password,cuit) => (dispatch) =>{
+  return AuthLoginMultiple(username, password,cuit).then(
+    ({ data }) => {
+      debugger
+      if(data.estado === "0")
+      {
+      localStorage.setItem("user", JSON.stringify(data));
+      dispatch({
+       type: LOGIN_SUCCESS,
+       payload: { user: data },
+      });
+    }else{
+      console.log("error")
+    }
+    
+    })
+}
 
 export const logout = () => (dispatch) => {
   AuthLogout();

@@ -14,6 +14,14 @@ export const AuthLogin = (username, password) => {
   });
 };
 
+export const AuthLoginMultiple = (username, password,cuitSel) => {
+  return axios.post("http://backend-unificado-canales-desa.appd.bh.com.ar/ob/api/login", {
+    usuario: username,
+    clave: password,
+    cuit:cuitSel
+  });
+}
+
 export const AuthLogout = () => {
   localStorage.removeItem("user");
 };

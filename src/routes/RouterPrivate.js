@@ -1,17 +1,17 @@
 import React from "react";
 
-import { Router, Redirect, Switch, Route } from "react-router-dom";
+import { HashRouter, Redirect, Switch } from "react-router-dom";
 
-import { history } from "../helpers/history";
 import Dashboard from '../components/dashboard/dashboard.js'
+import { EmptyLayout, LayoutRoute } from "../layout/index.js";
 
 export const RouterPrivate = () => {
   return (
-    <Router history={history}>
+    <HashRouter>
       <Switch>
-        <Route exact path="/" component={Dashboard} />
-        <Redirect to="/" />
+        <LayoutRoute  path="/home" layout={EmptyLayout} component={Dashboard} />
+        {/* <Redirect  to="/home" /> */}
       </Switch>
-    </Router>
+    </HashRouter>
   );
 };

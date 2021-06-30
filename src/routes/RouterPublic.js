@@ -31,7 +31,7 @@ export const RouterPublic = () => {
           layout={EmptyLayout}
           component={RecuperarUsuario}
         />
-        <Redirect to="/login" />
+        <Redirect from="/" exact  to="/login" />
       </Switch>
     </HashRouter>
   );

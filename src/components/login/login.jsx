@@ -5,7 +5,12 @@ import React,{useState} from 'react'
 import { useDispatch,useSelector } from "react-redux";
 import { login } from "../../actions/auth";
 import { useMediaQuery } from 'react-responsive'
-import { Redirect } from "react-router-dom";
+import { Redirect,Link,useRouteMatch } from "react-router-dom";
+
+
+import FactoresAutenticacion from "../selector-factor-autenticacion/factoresAutenticacion"
+
+
 
 import HeaderComponent from "./../modulos/header/header"
 import HeaderComponentMobile from "./../modulos/headerMobile/headerMobile.js"
@@ -17,6 +22,7 @@ import FooterComponentMobile from '../modulos/footerMobile/footerMobile.js'
 
 
 export default function Login() {
+    let match = useRouteMatch();
 
     const [DatosUsuario,SetDatosUsuarios] = useState({
         Usuario: '',
@@ -26,7 +32,7 @@ export default function Login() {
         query: '(min-device-width: 1224px)'
     })
     const isTabletOrMobileDevice = useMediaQuery({
-        query: '(max-device-width: 1224px)'
+        query: '(max-device-width: 1223px)'
     })
     //const isBigScreen = useMediaQuery({ query: '(min-device-width: 1824px)' })
    const [Enviado,SetEnviado] = useState(false)
@@ -87,7 +93,7 @@ export default function Login() {
 
 return(
     <div >
-    {data.user !== null ? <Redirect to={{pathname: '/MultipleCuit'}}/>   :
+   {data.user !== null ? <Redirect to={{pathname: '/MultipleCuit'}}/>   :
     isDesktopOrLaptop && <>
     {/* <div> style={{width: "1440px",height: "1024px",color:"black", backgroundColor:"black"}}> */}
     <div className="container">
@@ -123,7 +129,13 @@ return(
                 <div className="form-group" style={{marginTop:"20px"}}>
                     <Button name="botonVerde" text="Iniciar sesión"/> 
                 </div>
+                {/* <Link to={"/FactoresAutenticacion"}> */}
+
+                    
+                <Link to={location => ({ ...location, pathname: "/FactoresAutenticacion" })} >
                 <Button name="botonInvisible" text = "¿Tenes problemas para iniciar sesión?" />
+
+        </Link>
             </form>
            
             </div>

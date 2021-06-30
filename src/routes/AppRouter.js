@@ -6,6 +6,16 @@ import { PublicRoute } from "./PublicRoute";
 import { RouterPrivate } from "./RouterPrivate";
 import { RouterPublic } from "./RouterPublic";
 
+
+
+import Mcuits from "../components/multiple-cuit/multipleCuitComponent.js";
+import FactoresAutenticacion from "./../components/selector-factor-autenticacion/factoresAutenticacion.js";
+import RecuperarUsuario from "./../components/recuperar-usuario/recuperar-usuario.js";
+import Login from "../components/login/login.jsx";
+import Dashboard from '../components/dashboard/dashboard.js'
+
+
+
 export const AppRouter = () => {
   const { isLoggedIn } = useSelector((state) => state.auth);
   const getBasename = () => {
@@ -19,10 +29,29 @@ export const AppRouter = () => {
     <HashRouter basename={getBasename()}>
       <Switch>
         <PublicRoute
-          path="/"
-          component={RouterPublic}
+          path="/login"
+          component={Login}
           isAuthenticated={isLoggedIn}
         />
+    <PublicRoute
+          path="/MultipleCuit"
+          component={Mcuits}
+          isAuthenticated={isLoggedIn}
+        />
+
+<PublicRoute
+          path="/FactoresAutenticacion"
+          component={FactoresAutenticacion}
+          isAuthenticated={isLoggedIn}
+        />
+
+
+        
+
+
+
+
+
         {/* <PublicRoute
           path="/MultipleCuit"
           component={RouterPublic}
@@ -38,13 +67,18 @@ export const AppRouter = () => {
           component={RouterPublic}
           isAuthenticated={isLoggedIn}
         /> */}
+
+
+
         <PrivateRoute
-          exact
-          path="/"
-          component={RouterPrivate}
+          path="/home"
+          component={Dashboard}
           isAuthenticated={isLoggedIn}
         />
-        <Redirect to="/login" />
+
+
+
+        <Redirect  to="/login" />
       </Switch>
     </HashRouter>
   );

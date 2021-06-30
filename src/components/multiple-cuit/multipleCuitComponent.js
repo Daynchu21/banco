@@ -1,10 +1,10 @@
-import React from 'react';
+import React,{useState} from 'react';
 import HeaderComponent from './../modulos/header/header'
 // import FooterComponet from './../modulos/footer/footer'
 import Button from './../modulos/button/button'
 import "./multipleCuitComponent.scss"
 import { useMediaQuery } from 'react-responsive'
-
+import { Link } from 'react-router-dom';
 
 
 
@@ -24,12 +24,18 @@ import { useMediaQuery } from 'react-responsive'
 //     );
 // }
 
-function Mbuttons (){
-    return (
-        <button >
+var user= [
+    {cuit:"23124851459",
+    razonSocial:"a"},
+    {cuit:"30500011072",
+    razonSocial:"a"},
+    {cuit:"30629401888",
+    razonSocial:"a"}
+    ]
 
-        </button>
-        )
+function Mbuttons (user){
+   
+
     }
 
 
@@ -45,7 +51,20 @@ export default function Mcuits(){
     })
     //const isBigScreen = useMediaQuery({ query: '(min-device-width: 1824px)' })
 
+    const [cuits,Setcuits] = useState(null)
+
+    const handleChange = (e)=>{
+        e.preventDefault();
+        Setcuits(e.target.value)
+    }
+
+    const enviar =() =>{
+
+
+    }
+
     return(
+        
         <div>
             <HeaderComponent />
                 <div className="containerformMC">
@@ -54,12 +73,15 @@ export default function Mcuits(){
                 {/* <div className=""><Button name="botonEmpresa" text="Empresa 1" /></div>
                 <div className=""><Button name="botonEmpresa" text="Empresa 2" /></div>
                 <div className=""><Button name="botonEmpresa" text="Empresa 3" /></div> */}
-
+                {  user.map(function(obj) {
+         return <button className="botonEmpresa" value={obj.cuit} key={obj.cuit} onClick={handleChange}  >{obj.razonSocial} <br/>{obj.cuit}</button>
+        })}
 
                 </div>
                 <div className="containerformBTN">
             <div><Button name="botonCerrarSesion" text="Cerrar sesión" /></div>
-            <div><Button name="botonSiguiente" text="Seleccionar" /></div>
+           {cuits === null ? <button className="botonSiguiente"  disabled >Seleccionar</button> :  <button className="botonSiguiente" onClick={enviar} >Seleccionar</button>}
+            {/* <div><Button name="botonSiguiente" text="Seleccionar" /></div> */}
             </div>
                 {/* <div className="grid-item"><Button name="botonEmpresa" text="Empresa 4" /></div>
                 <div className="grid-item"><Button name="botonEmpresa" text="Empresa 5" /></div>
