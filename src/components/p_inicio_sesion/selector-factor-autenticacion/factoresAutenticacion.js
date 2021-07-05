@@ -21,7 +21,9 @@ export default function FactoresAutenticacion(){
                     </Link>
                     </div>
                 <div >
+                <Link to={location => ({ ...location, pathname: "/OlvidarPass" })} >
                     <Button name="botonFA" text="Olvidé mi contraseña" />
+                    </Link>
                     </div>
                 <div >
                     <Button name="botonFA" text="Se me bloqueo mi contraseña" />

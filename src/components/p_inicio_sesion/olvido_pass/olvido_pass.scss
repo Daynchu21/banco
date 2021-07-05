@@ -1,0 +1,32 @@
+@import '../../../styles/colors';
+@import '../../../styles/buttons';
+@use '../../../styles/thypography';
+
+
+#ContainerOpass{
+    background: #FFFFFF;
+    border-radius: 8px;
+    margin: 5.5em auto 0;
+    padding: 0.75em 1em 0.75em 1em;
+    max-width: 27em;
+    display: grid;
+    grid-gap: 2em;
+}
+
+#inputs_Cuits{
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 1em;
+}
+
+#buttons{
+    display: grid;
+    grid-template-columns: repet(2 1rem);
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+}
+
+#TituloText{
+    grid-auto-columns: 80%;
+    display: grid;
+}
