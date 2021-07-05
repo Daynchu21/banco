@@ -8,7 +8,6 @@ import { useMediaQuery } from 'react-responsive'
 import { Redirect,Link,useRouteMatch } from "react-router-dom";
 
 
-import FactoresAutenticacion from "../selector-factor-autenticacion/factoresAutenticacion"
 
 
 

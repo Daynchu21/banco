@@ -1,6 +1,6 @@
-@import './../../styles/colors';
-@import './../../styles/buttons';
-@use './../../styles/thypography';
+@import '../../../styles/colors';
+@import '../../../styles/buttons';
+@use '../../../styles/thypography';
 
 .containerforRusuario {
     background: #FFFFFF;
@@ -9,14 +9,9 @@
     padding: 0.75em 1em 0.75em 1em;
     max-width: 27em;
     max-height: 23em;
+    display: grid;
 } 
 
-// .containerforRusuarioGrid {
-//     display: grid;
-//     padding: 48px 48px 48px 48px ;
-
-//     // grid-template-columns: 48px 48px 48px 48px;
-// }
 
 .h1QueEmpresa {
     //position: absolute;
@@ -74,10 +69,10 @@
 .botonEmpresa:disabled {
     background: $color-grey-light-OB;
 }
-.item1 {
-    grid-column-start: 1;
-    grid-column-end: 4;
-}
+// .item1 {
+//     grid-column-start: 1;
+//     grid-column-end: 4;
+// }
 .gridBotones {
     display: grid;
 

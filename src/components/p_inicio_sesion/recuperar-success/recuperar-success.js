@@ -1,6 +1,6 @@
 import React from 'react';
-import HeaderComponent from './../modulos/header/header'
-import Button from './../modulos/button/button'
+import HeaderComponent from '../../modulos/header/header'
+import Button from '../../modulos/button/button'
 import "./recuperar-success.scss"
 
 export default function RecuperarSuccess(){

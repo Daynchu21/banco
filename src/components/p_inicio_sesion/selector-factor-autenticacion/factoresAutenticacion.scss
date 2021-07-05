@@ -1,10 +1,7 @@
-@import './../../styles/colors';
-@import './../../styles/buttons';
+@import '../../../styles/colors';
+@import '../../../styles/buttons';
 
 .containerformFA {
-    display: grid;
-    // grid-template-columns: auto auto auto;
-    // grid-gap: 10px;
     display: grid;
     // grid-auto-rows: minmax(100px, auto);
     background-color: white;
@@ -78,18 +75,8 @@
     box-sizing: border-box;
     border-radius: 8px;
 }
-.botonEmpresa:disabled {
-    background: $color-grey-light-OB;
-}
-.itemPorblemasSesion {
-    grid-column-start: 1;
-    grid-column-end: 5;
-}
-.gridBotones {
-    display: grid;
-    grid-template-columns: auto auto ;
-}
 
-.OrientacionIzq {
-    text-align-last: left;
+.ButtonsFac{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
 }
