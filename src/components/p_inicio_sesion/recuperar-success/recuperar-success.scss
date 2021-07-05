@@ -1,19 +1,18 @@
-@import './../../styles/colors';
-@import './../../styles/buttons';
-@use './../../styles/thypography';
+@import '../../../styles/colors';
+@import '../../../styles/buttons';
+@use '../../../styles/thypography';
 
 .containerformRS {
+    margin: 5.5em auto 0;
     display: grid;
-    background-color: $color-white-OB;
-
-    width: 432px;
-    height: 368px;
-
+    grid-gap: 1em;
+    background-color: #FFFFFF;
+    width: 27em;
+    /* height: 23em; */
     border-radius: 8px;
-    align-items: center;    
-    margin-left: 31.500em;//504px;
-    margin-top: 7.500em;
-    padding-left: 2.000em;//32px;
+    text-align: center;
+    padding: 0.75em 1em 0.75em 1em;
+
 } 
 
 .botonAceptarRS {
