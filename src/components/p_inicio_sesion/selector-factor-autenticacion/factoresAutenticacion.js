@@ -17,25 +17,25 @@ export default function FactoresAutenticacion(){
                <div className="ButtonsFac">
                 <div >
                 <Link to={location => ({ ...location, pathname: "/RecuperarUsuario" })} >
-                    <Button name="botonFA" text="Olvidé mi usuario" />
-                    <label>
-                    <img src={FAvanzar} alt="flecha" style={{"margin-bottom": "-1em"}} />
+                     <label>
+                    <button className="botonFA" >Olvidé mi usuario</button>
+                    <img src={FAvanzar} alt="flecha" style={{"margin-left": "-2em"}} />
                     </label>
                     </Link>
                     </div>
                 <div >
                 <Link to={location => ({ ...location, pathname: "/OlvidarPass",state: {codigo: 1 } })} >
-                    <Button name="botonFA" text="Olvidé mi contraseña" />
-                    <label>
-                    <img src={FAvanzar} alt="flecha" style={{"margin-bottom": "-1em"}} />
+                <label>
+                    <button className="botonFA" >Olvidé mi contraseña</button>
+                    <img src={FAvanzar} alt="flecha" style={{"margin-left": "-2em"}} />
                     </label>
                     </Link>
                     </div>
                 <div >
                 <Link to={location => ({ ...location, pathname: "/OlvidarPass",state: {codigo: 2 }  })} >
-                    <Button name="botonFA" text="Se me bloqueo mi contraseña" />
                     <label>
-                    <img src={FAvanzar} alt="flecha" style={{"margin-bottom": "-1em"}} />
+                    <button className="botonFA" >Se me bloqueo mi contraseña</button>
+                    <img src={FAvanzar} alt="flecha" style={{"margin-left": "-2em"}} />
                     </label>
                     </Link>
                 </div>
