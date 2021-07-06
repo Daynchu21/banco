@@ -15,6 +15,8 @@ import Login from "../components/login/login.jsx";
 import Dashboard from '../components/dashboard/dashboard.js'
 import Vmetodos from "../components/p_inicio_sesion/validacion_metodos/validacion_metodos";
 import Vcontraseña from "../components/p_inicio_sesion/vencimiento_Pass/vencimiento_pass";
+import Rmetodos from "../components/p_inicio_sesion/recuperacion_metodos/recuperacion_metodos";
+import Nclave from "../components/p_inicio_sesion/nuevaClaveSucces/nClaveSucces";
 
 export const AppRouter = () => {
   const { isLoggedIn } = useSelector((state) => state.auth);
@@ -37,6 +39,9 @@ export const AppRouter = () => {
     <PublicRoute path="/OlvidarPass" component={OlvidoPass} isAuthenticated={isLoggedIn}/>
     <PublicRoute path="/ValidaMetodos" component={Vmetodos} isAuthenticated={isLoggedIn}/>
     <PublicRoute path="/Vencimiento_contraseña" component={Vcontraseña} isAuthenticated={isLoggedIn}/>
+    <PublicRoute path="/Recuperacion_metodos" component={Rmetodos} isAuthenticated={isLoggedIn}/>
+    <PublicRoute path="/NuevaClaveSucces" component={Nclave} isAuthenticated={isLoggedIn}/>
+
 
     
     {/* <PublicRoute path="/Vencimiento_contraseña" component={Vcontraseña} isAuthenticated={isLoggedIn}/> */}

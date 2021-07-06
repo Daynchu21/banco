@@ -3,7 +3,7 @@
 @use '../../../styles/thypography';
 
 
-#ContainerVmetodos{
+#ContainerRMetodos{
     background: #FFFFFF;
     border-radius: 8px;
     margin: 5.5em auto 0;
@@ -13,10 +13,9 @@
     grid-gap: 2em;
 }
 
-#Buttons{
+#buttons{
     display: grid;
     grid-gap: 1em;
-    justify-content: center;
 }
 
 #Inputs{
@@ -35,5 +34,6 @@
         weight: bold;
     }
     height: 3em;    
-    text-align: inherit;     
+    text-align: inherit;   
+    width: 100%;  
 }

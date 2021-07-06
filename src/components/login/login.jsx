@@ -16,8 +16,8 @@ import HeaderComponentMobile from "./../modulos/headerMobile/headerMobile.js"
 
 import FooterComponent from '../modulos/footer/footer';
 import FooterComponentMobile from '../modulos/footerMobile/footerMobile.js'
-// const axios = require('axios');
-// const Swal = require('sweetalert2')
+import eye_open from "../../assets/iconos/eye_open.svg"
+import eye_close from "../../assets/iconos/eye_close.svg"
 
 
 export default function Login() {
@@ -27,6 +27,8 @@ export default function Login() {
         Usuario: '',
         Pass: ''
     })
+    const [passShow,SetpassShow] = useState(false)
+
     const isDesktopOrLaptop = useMediaQuery({
         query: '(min-device-width: 1224px)'
     })
@@ -67,27 +69,11 @@ export default function Login() {
           .catch(() => {
            
           });
-
-
-    //    axios.post('http://backend-unificado-canales-desa.appd.bh.com.ar/ob/api/login', {
-    //     usuario: DatosUsuario.Usuario,
-    //     clave: DatosUsuario.Pass
-    //       })
-    //       .then(function (response) {
-    //           if((response.data).hasOwnProperty('datos'))
-    //           {
-    //             Swal.fire('Login Exitoso', response.data.datos.cuit, 'success')
-    //           }else
-    //           {
-    //             Swal.fire('', "Los datos ingresados no son válidos", 'error')
-    //           }
-    //         console.log(response);
-    //       })
-    //       .catch(function (error) {
-    //         console.log(error);
-    //       });
     }
+}
 
+const ocultarContraseña = () => {
+    SetpassShow(passShow ? false : true);
 }
 
 return(
@@ -110,7 +96,10 @@ return(
                     <input type="text" className="inputBlanco" name="Usuario" placeholder="Usuario"  onChange={handleChange} />
                 </div>
                 <div className={'form-group' + ( !DatosUsuario.Pass ? ' has-error' : '')} >
-                    <input type="password" className="inputBlanco" name="Pass" placeholder="Contraseña" onChange={handleChange} />
+                    <input type={passShow ? "text" : "password"} className="inputBlanco" name="Pass" placeholder="Contraseña" onChange={handleChange} />
+                    <label onClick={() => {ocultarContraseña()}} id="inputIm">
+                    {passShow ? <img src={eye_open} alt="ojo" style={{"margin-bottom": "-1em"}} /> : <img src={eye_close} alt="ojo" style={{"margin-bottom": "-1em"}}/> }
+                    </label>  
                     { Enviado && !DatosUsuario.Pass &&
                         <div className="help-block" style={{color:"red"}}>Los datos ingresados son incorrectos</div>
                     }

@@ -21,7 +21,7 @@ export default function RecuperarUsuario(){
                 <input className="CuitCuilEmpresa" placeholder="Cuit/Cuil" /></div>
                 <div className="containerformBTNRecUsuario">
                 <div>
-                <Link to={location => ({ ...location, pathname: "/login" })} >
+                <Link to={location => ({ ...location, pathname: "/FactoresAutenticacion" })} >
                     <Button name="botonCerrarSesion" text="Cancelar" />
                     </Link>
                     </div>

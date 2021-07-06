@@ -55,9 +55,9 @@ export default function Vcontraseña () {
                     type={tipo ? "text" : "password"} name="pass2" onChange={handleChange} 
                     id={(borderError ? 'error' : 'inputBlancoVctoPass')}
                     placeholder="Repetir Nueva clave" /> 
-                    <labe onClick={() => {ocultarContraseña()}}>
+                    <label onClick={() => {ocultarContraseña()}}>
                     {tipo ? <img src={eye_open} alt="ojo" id="inputImg"/> : <img src={eye_close} alt="ojo" id="inputImg"/> }
-                    </labe>                    
+                    </label>                    
                 </div>   
                 <div>
                     <h4 id="containerText">
