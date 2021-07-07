@@ -10,7 +10,7 @@ import Mcuits from "../components/multiple-cuit/multipleCuitComponent.js";
 import FactoresAutenticacion from "../components/p_inicio_sesion/selector-factor-autenticacion/factoresAutenticacion.js"
 import RecuperarUsuario from "../components/p_inicio_sesion/recuperar-usuario/recuperar-usuario.js";
 import RecuperarUsuarioSucces from "../components/p_inicio_sesion/recuperar-success/recuperar-success.js"
-import OlvidoPass from "../components/p_inicio_sesion/olvido_pass/olvido_pass";
+import RecuperoPass from "../components/p_inicio_sesion/olvido_pass/olvido_pass";
 import Login from "../components/login/login.jsx";
 import Dashboard from '../components/dashboard/dashboard.js'
 import Vmetodos from "../components/p_inicio_sesion/validacion_metodos/validacion_metodos";
@@ -36,7 +36,7 @@ export const AppRouter = () => {
     <PublicRoute path="/FactoresAutenticacion" component={FactoresAutenticacion} isAuthenticated={isLoggedIn}/>
     <PublicRoute path="/RecuperarUsuario" component={RecuperarUsuario} isAuthenticated={isLoggedIn}/>
     <PublicRoute path="/RecuperarUsuarioSucces" component={RecuperarUsuarioSucces} isAuthenticated={isLoggedIn}/>
-    <PublicRoute path="/OlvidarPass" component={OlvidoPass} isAuthenticated={isLoggedIn}/>
+    <PublicRoute path="/RecuperoPass" component={RecuperoPass} isAuthenticated={isLoggedIn}/>
     <PublicRoute path="/ValidaMetodos" component={Vmetodos} isAuthenticated={isLoggedIn}/>
     <PublicRoute path="/Vencimiento_contraseña" component={Vcontraseña} isAuthenticated={isLoggedIn}/>
     <PublicRoute path="/Recuperacion_metodos" component={Rmetodos} isAuthenticated={isLoggedIn}/>

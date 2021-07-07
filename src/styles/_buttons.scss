@@ -5,181 +5,83 @@ $border-radius-OB: 8px;
 
 /* Auto Layout */
 
-.botonInvisible {
-    background: $color-white-OB;
-				 
-    //display: flex;
-    flex-direction: row;
-    //justify-content: center;
-    align-items: center;
-    //padding: 12px 16px;
-    //margin: 16px;
-    // position: absolute;
-    width: 336px;
-    height: 48px;
-    //left: 552px;
-    //top: 722px;
-
-    border: 1px solid $color-white-OB;
-    
-    border: {
-        radius: $border-radius-OB;
-    }
-
-    //color texto
-    color: $color-green-OB;       
-    font: {
-        family: $font-family-OB;
-        size: $font-size-text-but-16;
-        style: normal;
-		width: 336px;
-        height: 48px;
-        left: 552px;
-        top: 722px;			 
-        weight: 500;
-        size: $font-size-text-but-16;
-    }
-}
-.botonInvisible:hover {
-    color: $color-blue-light-OB;
-}
-
-.botonVerde {
-    background: $color-green-OB;
-    margin-bottom: 16px;
-    // display: flex;
-    flex-direction: row;
-    // justify-content: space-between;
-    align-items: center;
-    // padding: 16px;
-	
-    // position: absolute;
-    width: 336px;
-    height: 56px;
-    // left: 552px;
-    // top: 356px;
-
-    border: none;
-    // box-sizing: border-box;
-    border-radius: $border-radius-OB;
-
-    font-family: $font-family-OB;
-    color: $color-white-OB;
-    font: {
-        style: medium;
-        width: 96px;
-        height: 19px;
-        left: 120px;
-        top: 14.5px;
-        weight: 500;
-        size: $font-size-text-but-16;
-    }
-    // line-height: 19px;
-        
-}
-// .botonVerde {
-//     background: $color-green-OB;
-//     padding: 12px 16px;
-
-//     border: none;
-//     border-radius: $border-radius-OB;
-    
-//     //position: absolute;
-//     width: 336px;
-//     height: 48px;
-//     left: 552px;
-//     top: 560px;
-//     color: $color-white-OB;
-    
-//     font: {
-//         family: $font-family-OB;
-//         style: normal;
-//         weight: 500;
-//         size: 16px;
-//     }
-    
-// }
-.botonVerde:hover {
-    background: $color-blue-light-OB;
-}
-
-button:disabled {
-    background: $color-grey-light-OB;
-}
-
-.botonBlanco {
-    background: $color-white-OB;
-				 
-    //display: flex;
-    flex-direction: row;
-    //justify-content: center;
-    align-items: center;
-    //padding: 12px 16px;
-    margin-bottom: 16px;
-    // position: absolute;
-    width: 336px;
-    height: 48px;
-    //left: 552px;
-    //top: 722px;
-
-    border: 1px solid $color-green-OB;
-    
-    border: {
-        radius: $border-radius-OB;
-    }
-
-    //color texto
-    color: $color-green-OB;       
-    font: {
-        family: $font-family-OB;
-        size: $font-size-text-but-16;
-        style: normal;
-		width: 336px;
-        height: 48px;
-        left: 552px;
-        top: 722px;			 
-        weight: 500;
-        size: $font-size-text-but-16;
-    }
-						 
-		
-}
-
-.botonBlanco:hover {
-    border: 1px solid $color-blue-light-OB;
-    color: $color-blue-light-OB;
-}
-
-.botonBlanco:disabled {
-    background: $color-grey-light-OB;
-}
-
 input {
     border: 1px solid #9B9B9B;
     box-sizing: border-box;
     border-radius: $border-radius-OB;
-
     font-family: $font-family-OB;
 }
 
-
- input[type="checkbox"] {
-// //    position: static;
+input[type="checkbox"] {
      width: 20px;
      height: 20px;
-//     left: 0px;
-//     //top: calc(50% - 20px/2);
+}
 
-//     border: 1px solid $color-grey-light-OB;
-//     box-sizing: border-box;
-//     border-radius: 4px;
-
-//     margin-bottom: 16px;
-//     margin-right: 8px;
- }
-
- input {
+input {
      font-family: $font-family-OB;
+}
+
+.button{
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 16px;
+    width: 160px;
+    height: 48px;
+    left: 728px;
+    bottom: 492px;
+    border-radius: $border-radius-OB;
+    font-family: $font-family-OB;
+    font-weight: 500;
+    font-size: $font-size-text-but-16;
  }
 
- 
+ #default{
+    @extend #buttonGreen;
+    width: auto
+ }
+
+#buttonGreen{
+    @extend .button;
+    background: $color-green-OB;
+    border: none;     
+    color: $color-white-OB;     
+    transition: 800ms;    
+}
+
+#buttonGreen:hover {
+    background: $color-blue-light-OB;
+}
+
+ #buttonGreen:disabled,
+ #buttonGreen[disabled]
+ {
+    @extend #buttonGreen;
+    background: $color-grey-light-OB;
+ }
+
+ #buttonWhite {
+    @extend .button;
+    background-color: $color-white-OB;
+    border: 1px solid $color-green-OB;
+    box-sizing: border-box;
+    color: $color-green-OB;       
+}
+
+#buttonWhite:hover {
+    border: 1px solid $color-blue-light-OB;
+    color: $color-blue-light-OB;
+}
+
+#invisible{
+    @extend .button;
+    background-color: $color-white-OB;
+    border: none;
+    color: $color-green-OB;  
+    transition: 800ms; 
+    width: auto;
+ }
+
+ #invisible:hover {
+    color: $color-blue-light-OB;
+}

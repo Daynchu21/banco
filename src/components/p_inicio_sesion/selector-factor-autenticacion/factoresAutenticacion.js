@@ -24,21 +24,21 @@ export default function FactoresAutenticacion(){
                     </Link>
                     </div>
                 <div >
-                <Link to={location => ({ ...location, pathname: "/OlvidarPass",state: {codigo: 1 } })} >
+                <Link to={location => ({ ...location, pathname: "/RecuperoPass" })} >
                 <label>
-                    <button className="botonFA" >Olvidé mi contraseña</button>
+                    <button className="botonFA" >Olvidé o Bloqueé mi clave</button>
                     <img src={FAvanzar} alt="flecha" style={{"margin-left": "-2em"}} />
                     </label>
                     </Link>
                     </div>
-                <div >
-                <Link to={location => ({ ...location, pathname: "/OlvidarPass",state: {codigo: 2 }  })} >
+                {/* <div >
+                <Link to={location => ({ ...location, pathname: "/RecuperoPass",state: {codigo: 2 }  })} >
                     <label>
                     <button className="botonFA" >Se me bloqueo mi contraseña</button>
                     <img src={FAvanzar} alt="flecha" style={{"margin-left": "-2em"}} />
                     </label>
                     </Link>
-                </div>
+                </div> */}
                 </div>
                 </div>
             <FooterComponet />

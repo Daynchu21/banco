@@ -19,7 +19,7 @@ export default function Nclave (){
             </h1>
             </div>
             <div>
-            <h3>Volvé a iniciar sesión en tu cuenta.</h3>
+            <h3>Volvé a iniciar con tu nueva clave.</h3>
             </div>
             <div>
                 <Link to={location => ({ ...location, pathname: "/login" })}>

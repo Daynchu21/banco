@@ -55,7 +55,7 @@ function Email (props){
                 <h1>Ingresá el código de acceso</h1>
             </div>
             <div>
-            <h3>Te enviamos el código por Email al m······@softmedia.com.ar</h3>
+            <h3>Te enviamos el código al Email m······@softmedia.com.ar</h3>
             </div>
         </div>
     )

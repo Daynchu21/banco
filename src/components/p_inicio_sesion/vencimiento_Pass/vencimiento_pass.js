@@ -6,6 +6,7 @@ import eye_close from "../../../assets/iconos/eye_close.svg"
 import { Link } from 'react-router-dom';
 
 export default function Vcontraseña () {
+    const [btnDisabled, setbtnDisabled] = useState(false);
     const [tipo, setTipo] = useState(false);
     const [borderError, setBorderError] = useState(false);
     const [DatosUsuario,SetDatosUsuarios] = useState({
@@ -18,6 +19,10 @@ export default function Vcontraseña () {
             ...DatosUsuario,
             [e.target.name] : e.target.value
         })
+
+        if(DatosUsuario.pass1 != '' || DatosUsuario.pass2 != ''){
+            setbtnDisabled(true);
+        }        
     }
 
     const ocultarContraseña = () => {
@@ -28,7 +33,7 @@ export default function Vcontraseña () {
         console.log(DatosUsuario.pass1);
 
         if(DatosUsuario.pass1 === DatosUsuario.pass2 && DatosUsuario.pass1 !== '' && DatosUsuario.pass2 !== ''){
-            console.log("igual");
+            setBorderError(false);
         }else{
             setBorderError(true);
         }
@@ -37,7 +42,7 @@ export default function Vcontraseña () {
     return(
         <div>
             <HeaderComponent />
-            <div className="containerforRusuario">            
+            <div id="containerForm">            
                 <div className="containerforRusuarioGrid">
                     <h1>Creá tu nueva clave</h1>
                 </div>    
@@ -68,12 +73,16 @@ export default function Vcontraseña () {
                 <div id="containerformBTNVctoPass">
                     <div>
                         <Link to="/Login" replace >
-                            <button id="botonCancelar">Cancelar</button>
+                            <button id="buttonWhite">Cancelar</button>
                         </Link>                    
                     </div>
                     <div>
-                        <button id="botonContinuar"
-                        onClick={() => {validarContraseña()}}>Continuar</button>
+                        <button 
+                            id="buttonGreen"
+                            disabled={!btnDisabled}
+                            onClick={() => {validarContraseña()}}>
+                            Continuar
+                        </button>
                     </div>
                 </div>    
             </div>

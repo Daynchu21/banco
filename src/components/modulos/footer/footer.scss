@@ -1,34 +1,64 @@
 @import '../../../styles/colors';
 
-.footerDestokp {
+.posicion{
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    // left: 0;
+ }
     
-    height: 96px;
-    display: grid;
+.footerDesktop {
     align-items: center;
+    text-align-last: center;
+    height: 6em;//96px;
+    display: grid;
     background: #FFFFFF;
     grid-template-columns: repeat(5, 1fr);
 }
 
 .CBancoHipotecario {
-    width: 165px;
-    height: 16px;
-    left: 24px;
-    top: 968px;
+    width: 12em;//165px;
+    //height: 16px;
+    //left: 24px;
+    //top: 968px;
     
     font: {
         family: Roboto;
         style: normal;
-        size: 14px;
+        size: 0.875em;//14px;
         weight: normal;
-        line-height: 16px;
+        line-height: 1em;//16px;
     }
     
     color: $color-footer-grey-OB;
  }
 
- .posicion{
-    width: 100%;
-    position: fixed;
-    bottom: 0px;
-    left: 0;
- }
+
+ @media (max-width: 630px) {
+
+    .footerDesktop {
+        grid-template-columns: none;
+        grid-template-rows: repeat(5, 1fr);
+        align-items: inherit;
+        text-align-last: inherit;
+        height: inherit;
+        // background: inherit;
+        background: #FFFFFF;
+        border-radius: 8px;
+        margin: 0 1em 1em 1em;
+        padding: 0.75em 1em 0.75em 1em;
+        max-width: 27em;
+        display: grid;
+        grid-gap: 2em;
+        place-items: center;
+
+    }
+
+    .posicion {
+        width: inherit;
+        position: inherit;
+        bottom: inherit;
+    }    
+    
+}
+ 

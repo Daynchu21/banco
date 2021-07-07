@@ -38,7 +38,7 @@ export default function Vmetodos ()
             <div id="ContainerVmetodos">
             <div>
                 <h1>
-                    ¿Adonde te enviamos el código de acceso?
+                    ¿Como querés generar el código de acceso?
                 </h1>
             </div>
                 <div id="Buttons">

@@ -2,21 +2,21 @@ import React from "react"
 import HeaderComponent from "../../modulos/header/header"
 import "./olvido_pass.scss"
 import { Link } from 'react-router-dom';
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 
-export default function OlvidoPass (){
+export default function RecuperoPass (){
 
-    const location = useLocation()
-    const { codigo } = location.state
+    // const location = useLocation()
+    // const { codigo } = location.state
 
     return(
         <div>
             <HeaderComponent/>
             <div id="ContainerOpass">
                 <div id="TituloText">
-                    {(codigo === 1 && <div> <h1>¿Olvidaste tu clave?</h1></div>) 
-                    || (codigo === 2 && <div> <h1>¿Se bloqueo tu clave?</h1></div>)}
-               
+                    {/* {(codigo === 1 && <div> </div>) 
+                    || (codigo === 2 && <div> <h1>¿Se bloqueo tu clave?</h1></div>)} */}
+               <h1>¿Olvidaste o bloqueaste tu clave?</h1>
                 <h3>Ingresa los siguientes datos para que podamos ayudarte</h3>
                 </div>
                 <div id="inputs_Cuits">

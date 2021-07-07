@@ -8,10 +8,10 @@ export default function FooterComponentMobile (props) {
       <div className="footerMobile">
         {/* <label className="CBancoHipotecario">© 2021 Banco Hipotecario</label> */}
         <address className="CBancoHipotecarioMobile">© 2021 Banco Hipotecario</address>
-        <Button name="botonInvisible" text = "Terminos y Condiciones" />
-        <Button name="botonInvisible" text = "Protección de Datos Personales" />
-        <Button name="botonInvisible" text = "Código de Prácticas Bancarias" />
-        <Button name="botonInvisible" text = "Ayuda" />
+        <button id="invisible">Terminos y Condiciones</button>
+        <button id="invisible">Protección de Datos Personales</button>
+        <button id="invisible">Código de Prácticas Bancarias</button>
+        <button id="invisible">Ayuda</button>
         </div>      
         </div>
   );
