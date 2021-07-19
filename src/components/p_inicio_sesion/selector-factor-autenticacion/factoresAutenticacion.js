@@ -1,5 +1,6 @@
 import React from 'react';
 import HeaderComponent from '../../modulos/header/header'
+import HeaderMobile from '../../modulos/headerMobile/headerMobile'
 import FooterComponet from '../../modulos/footer/footer'
 import Button from '../../modulos/button/button'
 import "./factoresAutenticacion.scss"
@@ -7,14 +8,20 @@ import { Link } from "react-router-dom";
 import FAvanzar from "../../../assets/iconos/flecha_avanzar.svg"
 
 export default function FactoresAutenticacion(){
+
     return(
         <div>
-            <HeaderComponent />
-                <div  className="containerformFA">
+            <div id="header_desktop">
+                <HeaderComponent />
+            </div>
+            <div id="header_mobile">
+                <HeaderMobile path={'/login'}/>
+            </div>
+            <div id="containerformFA">
                 <div>
-                <h1 className="itemPorblemasSesion">¿Tenés problemas para iniciar sesión?</h1>
+                    <h1 className="itemPorblemasSesion">¿Tenés problemas para iniciar sesión?</h1>
                 </div>
-               <div className="ButtonsFac">
+               <div id="ButtonsFac">
                 <div >
                 <Link to={location => ({ ...location, pathname: "/RecuperarUsuario" })} >
                      <label>
@@ -41,7 +48,9 @@ export default function FactoresAutenticacion(){
                 </div> */}
                 </div>
                 </div>
-            <FooterComponet />
+                <div id="footer_desktop">
+                    <FooterComponet />
+                </div>
         </div>
     )
 }

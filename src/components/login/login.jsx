@@ -1,17 +1,13 @@
 import './login.scss'
 import './../modulos/button/button.scss'
-import Button from './../modulos/button/button'
 import React,{useState} from 'react'
 import { useDispatch,useSelector } from "react-redux";
 import { login } from "../../actions/auth";
-import { useMediaQuery } from 'react-responsive'
-import { Redirect,Link,useRouteMatch } from "react-router-dom";
+import { Redirect,Link } from "react-router-dom";
 
 import HeaderComponent from "./../modulos/header/header"
-import HeaderComponentMobile from "./../modulos/headerMobile/headerMobile.js"
-
 import FooterComponent from '../modulos/footer/footer';
-import FooterComponentMobile from '../modulos/footerMobile/footerMobile.js'
+import ENV from '../../env';
 // const axios = require('axios');
 // const Swal = require('sweetalert2')
 import eye_open from "../../assets/iconos/eye_open.svg"
@@ -20,68 +16,51 @@ import eye_close from "../../assets/iconos/eye_close.svg"
 export default function Login() {
 
     const [DatosUsuario,SetDatosUsuarios] = useState({
+        Documento: '',
         Usuario: '',
         Pass: ''
     })
     const [passShow,SetpassShow] = useState(false)
-    // const isDesktopOrLaptop = useMediaQuery({
-    //     query: '(min-device-width: 1224px)'
-    // })
-    // const isTabletOrMobileDevice = useMediaQuery({
-    //     query: '(max-device-width: 1224px)'
-    // })
-    //const isBigScreen = useMediaQuery({ query: '(min-device-width: 1824px)' })
-
-
-
-
-    
-    //   const isTabletOrMobileDevice = useMediaQuery({
-    //     query: "(max-device-width: 22.5em)",
-    //   });
-
-    
-    //   const isDesktopOrLaptop = useMediaQuery({
-    //     query: "(min-device-width: 22.6em)",
-    //   });
-    
-    //   const isBigScreen = useMediaQuery({
-    //     query: "(min-device-width: 1201px )",
-    //   });
+    const [userShow,SetuserShow] = useState(false)
+    const [borderError, setBorderError] = useState(false);
 
 
    const [Enviado,SetEnviado] = useState(false)
    const data = useSelector((state) => state.auth )
 
-//    const { isLoggedIn } = useSelector((state) => state.auth);
-   const { message } = useSelector((state) => state.message);
+   const message = useSelector((state) => state.message);
+ 
+   const validaciones = useSelector((state) => state.auth);
    const dispatch = useDispatch();
 
-
-   const handleChange =(e) =>{
+   const handleChange =(e) =>{       
     SetDatosUsuarios({
         ...DatosUsuario,
         [e.target.name] : e.target.value
     })
+
+    if (!DatosUsuario.Pass || !DatosUsuario.Usuario || !DatosUsuario.Documento)
+    {
+        setBorderError(false);
+    }
     }
 
-  const  handleSubmit= (e) => {
-    e.preventDefault()
+  const  handleSubmit= () => {
     SetEnviado(true)
-    console.log(process.env )
-
-    if (!DatosUsuario.Pass && !DatosUsuario.Usuario)
+    if (!DatosUsuario.Pass && !DatosUsuario.Usuario && !DatosUsuario.Documento)
     {
+        setBorderError(true);
         console.log("por favor complete los datos")
     }else
     {
-        dispatch(login(DatosUsuario.Usuario,DatosUsuario.Pass))
+        dispatch(login(DatosUsuario.Documento,DatosUsuario.Usuario,DatosUsuario.Pass))
         .then(() => {
+            setBorderError(false);
             // props.history.push("/");
            // window.location.reload();
           })
           .catch(() => {
-           
+            setBorderError(false);
           });
 
 
@@ -108,32 +87,50 @@ export default function Login() {
 const ocultarContraseña = () => {
     SetpassShow(passShow ? false : true);
 }
+const ocultarUsuario = () => {
+    SetuserShow(userShow ? false : true);
+}
 return(
     <div >
     {data.user !== null ? <Redirect to={{pathname: '/MultipleCuit'}}/>   :
     // isDesktopOrLaptop && 
     // {/* <div> style={{width: "1440px",height: "1024px",color:"black", backgroundColor:"black"}}> */}
+    ( validaciones.validaciones !== null ? <Redirect to={{pathname: '/Vencimiento_contraseña'}}/> :
+   
     <div id="container">
+         {console.log(validaciones)}
         <HeaderComponent />
         <div id="containerform">
-            <form name="form" onSubmit={handleSubmit} id="FormContainer">
+            <div id="FormContainer">
             <h1 id="titulo">
                 ¡Bienvenido a Office Banking!
                 </h1>
             {/* <div className="InputsGrow" style={{marginTop:"10px"}}> */}
+                          {console.log(ENV.BASE_URL)}
+                          {console.log(process.env)  }
+                <input type="text" id={(message.message !== null) ? 'errorBorder' : 'inputBlanco'} name="Documento" placeholder="DNI"  onChange={handleChange} />
+                
                 <div  className={'form-group' + ( !DatosUsuario.Usuario ? ' has-error' : '')} >
-                    <input type="text" id="inputBlanco" name="Usuario" placeholder="Usuario"  onChange={handleChange} />
-                </div>
-                <div className={'form-group' + ( !DatosUsuario.Pass ? ' has-error' : '')} >
-                    <input type={passShow ? "text" : "password"} id="inputBlanco" name="Pass" placeholder="Contraseña" onChange={handleChange} />
-                    <label onClick={() => {ocultarContraseña()}} id="inputIm">
-                    {passShow ? <img src={eye_open} alt="ojo" style={{"margin-bottom": "-1em", "margin-left": "-3em"}} /> : <img src={eye_close} alt="ojo" style={{"margin-bottom": "-1em", "margin-left": "-3em"}}/> }
+                    <input type={userShow ? "text" : "password"} 
+                    id={(message.message !== null) ? 'errorBorder' : 'inputBlanco'}
+                    name="Usuario" placeholder="Usuario"  onChange={handleChange} />
+                    <label onClick={() => {ocultarUsuario()}} id="inputIm">
+                    {userShow ? <img src={eye_open} alt="ojo" style={{marginBottom: "-0.5em", marginLeft: "-3em"}} /> : <img src={eye_close} alt="ojo" style={{marginBottom: "-1em", marginLeft: "-3em"}}/> }
                     </label>  
-                    { typeof message !== 'undefined' && (message.estado === 'USUARIO_INVALIDO' || message.estado === 'CLAVE_INVALIDA' ) &&
-                        <div className="help-block" style={{color:"red", fontFamily:"Roboto"}}>Los datos ingresados son incorrectos</div>
-                    }
-                    { typeof message !== 'undefined' && (message.estado === 'USUARIO_BLOQUEADO') &&
-                        <div className="help-block" style={{color:"red", fontFamily:"Roboto"}}>El usuario se encuentra bloqueado</div>
+                </div>                
+
+                <div className={'form-group' + ( !DatosUsuario.Pass ? ' has-error' : '')} >
+                    <input type={passShow ? "text" : "password"} 
+                    id={(message.message !== null) ? 'errorBorder' : 'inputBlanco'}
+                     name="Pass" placeholder="Contraseña" onChange={handleChange} />
+                    <label onClick={() => {ocultarContraseña()}} id="inputIm">
+                    {passShow ? <img src={eye_open} alt="ojo" style={{marginBottom: "-0.5em", marginLeft: "-3em"}} /> : <img src={eye_close} alt="ojo" style={{marginBottom: "-1em", marginLeft: "-3em"}}/> }
+                    </label>  
+
+                    { (message.message !== null) ?
+                        <div id="help-block" style={{color:"red", fontFamily:"Roboto"}}>Los datos ingresados son incorrectos</div>
+                        :
+                        ''
                     }
                 </div>
                 {/* </div> */}
@@ -147,20 +144,23 @@ return(
                     </div>
                 </div>
                 {/* <div className="form-group" style={{marginTop:"20px"}}> */}
-                    <button id="botonVerde">
                     {/* <Button name="botonVerde" text="Iniciar sesión"/>  */}
+                <button id="default" onClick={()=> handleSubmit()}>
                     Iniciar sesión
-                    </button>
+                </button>
                 {/* </div> */}
                 <Link to={location => ({ ...location, pathname: "/FactoresAutenticacion" })} >
-                {/* <button name="botonInvisible" text = "¿Tenes problemas para iniciar sesión?" /> */}
-                    <button id="invisible">¿Tenes problemas para iniciar sesión?</button>
+                {/* <Button name="botonInvisible" text = "¿Tenes problemas para iniciar sesión?" /> */}
+                <button id="invisible" style={{margin:"10px"}}>
+                    ¿Tenés problemas para iniciar sesión?
+                </button>
+
         </Link>
-            </form>
+            </div>
             </div>
             <FooterComponent />
     </div>
-           
+           )
     }
     </div>
 ) 

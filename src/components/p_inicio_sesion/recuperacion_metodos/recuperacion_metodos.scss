@@ -1,6 +1,6 @@
 @import '../../../styles/colors';
 @import '../../../styles/buttons';
-@use '../../../styles/thypography';
+
 
 
 #ContainerRMetodos{
@@ -15,7 +15,9 @@
 
 #buttons{
     display: grid;
-    grid-gap: 1em;
+    /* grid-gap: 1em; */
+    grid-template-columns: auto auto;
+    background-color: #FFFFFF;
 }
 
 #Inputs{
@@ -36,4 +38,17 @@
     height: 3em;    
     text-align: inherit;   
     width: 100%;  
+}
+
+#header_mobile{
+    display: none;
+}
+
+@media (max-width: 639px) {
+    #header_desktop{
+        display: none;
+    }
+    #header_mobile{
+        display: block;
+    }
 }

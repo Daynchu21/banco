@@ -1,9 +1,12 @@
   body {
     margin: 0;
     background-color: #E5E5E5;
-    
+    min-height: 100vh;
+    min-width: 100vh;
   }
   
-  main-app {
-    min-height: 100vh; 
-  }
+  @media (max-width: 639px) {
+    body {
+      min-width: inherit;
+    }
+}

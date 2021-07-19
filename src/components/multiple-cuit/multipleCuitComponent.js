@@ -37,7 +37,7 @@ export default function Mcuits(){
     }
 
     const enviar =() =>{
-        dispatch(loginMultiple(cuits))
+        dispatch(loginMultiple(user.documento,user.usuario,user.contaseña,cuits))
     }
     
     return(

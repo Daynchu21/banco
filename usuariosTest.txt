@@ -1,0 +1,20 @@
+
+[11:52] ARISTIQUI MAXIMILIANO
+    usu_nro_documento    usu_login
+30957459    Febrero04
+33442722    Diego
+90909595    Juan
+​[11:52] ARISTIQUI MAXIMILIANO
+ el último es 40000005
+Contraseña 40000004
+
+
+
+[14:38] KALUJEROVICH EMILIANO NICOLAS
+    {​​​​​​​
+    "numeroDocumento": "40059432",
+    "usuario": "Jose",
+    "clave": "40000004"
+}​​​​​​​
+​[14:39] KALUJEROVICH EMILIANO NICOLAS
+    Una sola empresa asociada 

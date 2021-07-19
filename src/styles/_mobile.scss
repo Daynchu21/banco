@@ -1,0 +1,146 @@
+@media (max-width: 639px) {
+    #containerformFA{
+        min-height: 91vh;
+        background-size: cover;
+        display: grid;
+        background-color: white;
+        margin: inherit;
+        padding: 0px 40px;
+        width: inherit;
+        grid-template-rows: repeat(4, 1fr);
+        text-align: left;
+    }
+
+    #ButtonsFac
+    {
+        grid-template-columns: inherit;
+        justify-content: center;
+        grid-gap: 1em;
+        // width: inherit;
+        // margin: inherit;
+        // margin-bottom: 5%;
+        // height: 30em;
+    }
+ 
+    #containerforRusuario {
+        min-height: 91vh;
+        background: #FFFFFF;
+        border-radius: 8px;
+        margin: inherit;
+        padding: 0px 61px 0px 32px;
+        width: inherit;
+        max-height: 23em;
+        text-align: left;
+        display: grid;
+        background-size: cover;
+        grid-template-rows: 57px 70px 380px;
+    }
+
+    .containerformBTNRecUsuario{
+        grid-template-columns: auto;
+    }
+
+    h3{
+        font-size: 14px;
+    }
+
+    .CuitCuilEmpresa {
+        width: 304px;
+    }
+    .botonCerrarSesion{
+        width: 150px;
+    }
+    .botonSiguiente{
+        width: 150px;
+    }
+
+    #containerformRS{
+        min-height: 100vh;
+        background-size: cover;
+        display: grid;
+        background-color: white;
+        margin: inherit;
+        padding: 150px 40px;
+        width: inherit;
+        grid-template-rows: repeat(5, 1fr);
+        text-align: center;
+    }
+
+    #ContainerOpass{
+        min-height: 91vh;
+        background-size: cover;
+        display: grid;
+        background-color: white;
+        margin: inherit;
+        padding: 0px 40px;
+        width: inherit;
+        grid-template-rows: auto;
+        text-align: left;
+    }
+
+    #buttons{
+        grid-template-columns: auto;
+    }
+
+    #cuitCuilEmpresa {
+        width: 304px;
+    }
+
+    #errorCuitCuilEmpresa{
+        width: 304px;
+    }
+
+    #ContainerVmetodos{
+        min-height: 91vh;
+        background-size: cover;
+        display: grid;
+        background-color: white;
+        margin: inherit;
+        padding: 0px 40px;
+        width: inherit;
+        grid-template-rows: 120px 100px;
+        text-align: left;
+    }
+
+    #containerForm{
+        min-height: 91vh;
+        background-size: cover;
+        display: grid;
+        background-color: white;
+        margin: inherit;
+        padding-left: 40px;
+        width: inherit;
+        grid-template-rows: repeat(8, 1fr);
+        text-align: left;
+    }
+
+    #ContainerRMetodos{
+        min-height: 91vh;
+        background-size: cover;
+        display: grid;
+        background-color: white;
+        margin: inherit;
+        padding: 0px 40px;
+        width: inherit;
+        grid-template-rows: 150px 290px;
+        text-align: left;
+    }
+
+    #header_desktop{
+        display: none;
+    }
+    #header_mobile{
+        display: block;
+    }
+    #footer_desktop{
+        display: none;
+    }
+
+    .btnCancelMob{
+        display: none;
+    }
+
+    .btnContinueMob{
+        width: 100% !important;
+    }
+}

@@ -1,25 +1,14 @@
 @import '../../../styles/colors';
 @import '../../../styles/buttons';
 
-.containerformFA {
+#containerformFA {
+    background-color: $color-white-OB;
+    border-radius: 8px;
+    margin: 5.5em auto 0;
+    padding: 0.75em 1em 0.75em 1em;
+    max-width: 650px;
     display: grid;
-    // grid-auto-rows: minmax(100px, auto);
-    background-color: white;
-
-    width: 1004px;
-    height: 207px;
-    
-    // background: #FFFFFF;
-    align-items: center;    
-    // grid-auto-rows: min-content;
-    margin-left: 13.625em;//218px;
-    margin-top: 7.500em;//120px;
-    padding-left: 2.000em;//32px;
-    // padding-top: 35px;
-    //align-items: center;
-
-    left: 218px;
-    top: 212px;
+    grid-template-rows: repeat(2, 1fr);
     
 } 
 
@@ -76,7 +65,11 @@
     border-radius: 8px;
 }
 
-.ButtonsFac{
+#ButtonsFac{
     display: grid;
     grid-template-columns: repeat(3, auto);
+}
+
+#header_mobile{
+    display: none;
 }

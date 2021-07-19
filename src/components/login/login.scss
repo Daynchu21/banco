@@ -12,6 +12,11 @@
      
 }
 
+#help-block{
+    margin-top: 12px;
+}
+
+// }
 // .containerform {
 //     width: 30%;
 //     max-height: 30%;//37.875em;
@@ -26,7 +31,7 @@
 #containerform {
     background: #FFFFFF;
     border-radius: 0.5em;
-    margin: 10% auto;
+    margin: 7% auto;
     // padding: 0.75em 1em 0.75em 1em;
     max-width: 27em;
     min-width: min-content;
@@ -72,6 +77,11 @@ h1#titulo {
     // top: 22.25em;//356px;
 }
 
+#errorBorder{
+    @extend #inputBlanco;
+    border: 2px solid $color-red-OB;
+}
+
 // .inputBlanco:focus {
 //     border: 1px solid $color-grey-OB;
 // }
@@ -91,21 +101,12 @@ label {
 
 #botonVerde {
     background: $color-green-OB;
-    // margin-bottom: 16px;
-    // display: flex;
-    // flex-direction: row;
-    // justify-content: space-between;
     align-items: center;
-    // padding: 16px;
-	
-    // position: absolute;
+  
     width: auto;//21em;//336px;
     height: 3em;//56px;
-    // left: 552px;
-    // top: 356px;
-
+  
     border: none;
-    // box-sizing: border-box;
     border-radius: $border-radius-OB;
 
     font-family: $font-family-OB;
@@ -119,12 +120,14 @@ label {
         weight: 500;
         size: $font-size-text-but-16;
     }
-    // line-height: 19px;
     transition: 800ms;
-        
 }
 
+
+
 @media (max-width: 639px) {
+    .posicion_header { display: inherit; } 
+    .footerDesktop { display: inherit; } 
     #container{
         background-image: none;
         min-width: inherit;
@@ -138,6 +141,5 @@ label {
         width: inherit;
         margin: inherit;
         margin-bottom: 5%;
-        height: 30em;
     }
 }

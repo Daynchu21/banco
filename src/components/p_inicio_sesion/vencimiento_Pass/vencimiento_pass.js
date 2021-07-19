@@ -1,9 +1,12 @@
 import React,{useState} from 'react';
 import HeaderComponent from "../../modulos/header/header";
+import HeaderMobile from '../../modulos/headerMobile/headerMobile'
 import "./vencimiento_pass.scss"
 import eye_open from "../../../assets/iconos/eye_open.svg"
 import eye_close from "../../../assets/iconos/eye_close.svg"
-import { Link } from 'react-router-dom';
+import { Link,Redirect } from 'react-router-dom';
+import { useDispatch, useSelector } from "react-redux";
+import { recuperoClaveExpirada } from "../../../actions/validaciones/recupero";
 
 export default function Vcontraseña () {
     const [btnDisabled, setbtnDisabled] = useState(false);
@@ -14,13 +17,17 @@ export default function Vcontraseña () {
         pass2: ''
     })
 
+    const dispatch = useDispatch();
+    const validaciones = useSelector((state) => state.auth);
+    const data = useSelector((state) => state.auth);
+
     const handleChange=(e)=>{
         SetDatosUsuarios({
             ...DatosUsuario,
             [e.target.name] : e.target.value
         })
 
-        if(DatosUsuario.pass1 != '' || DatosUsuario.pass2 != ''){
+        if(DatosUsuario.pass1 !== '' || DatosUsuario.pass2 !== ''){
             setbtnDisabled(true);
         }        
     }
@@ -30,18 +37,25 @@ export default function Vcontraseña () {
     }   
 
     const validarContraseña = () => {
-        console.log(DatosUsuario.pass1);
-
         if(DatosUsuario.pass1 === DatosUsuario.pass2 && DatosUsuario.pass1 !== '' && DatosUsuario.pass2 !== ''){
+            dispatch(recuperoClaveExpirada(validaciones.validaciones,DatosUsuario.pass1))
             setBorderError(false);
         }else{
             setBorderError(true);
+            /* console.log(dispatch(recupero(DatosUsuario.pass1))); */
         }
     }
 
     return(
         <div>
-            <HeaderComponent />
+             {data.user !== null ? <Redirect to={{pathname: '/NuevaClaveSucces'}}/>   :
+            <div>
+            <div id="header_desktop">
+                <HeaderComponent />
+            </div>
+            <div id="header_mobile">
+                <HeaderMobile path={'/login'}/>
+            </div>
             <div id="containerForm">            
                 <div className="containerforRusuarioGrid">
                     <h1>Creá tu nueva clave</h1>
@@ -86,6 +100,9 @@ export default function Vcontraseña () {
                     </div>
                 </div>    
             </div>
+
+            </div>
+            }
         </div>
     )
 }

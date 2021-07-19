@@ -1,0 +1,30 @@
+Aca agreguemos chicos las tareas faltantes o lo que vayamos dejando pendiente por falta de tiempo o entrega de sprint
+asi despues vamos agarrando cada uno y de paso no nos pisamos los trabajos 
+
+
+MAXI DAVID  1_hacer pruebas de envarioment de desa, homo y prod. reconocer los ambientes desde codigo
+4_Crear documentacion de lo trabajado
+5_agregar codigo para que reconozca el navegador como una PWA
+MAXI        6_limpiar scss
+DAVID       7_limpiart react
+DAVID + NICO CORCOS     8_pantalla 404 not found 
+
+9_Agregar mensaje de error en Login, cuando el usuario esta bloqueado
+_Agregar mensaje de error en Login, cuando no hay conexion con el backend 
+_Agregar spinner o loading al esperar respuesta del servidor
+
+
+- Agregar captcha en Recuperar Usuario
+- Arreglar Bug de Message 
+
+
+
+
+Ver de mapear errores con backend para abarcar todo login. (ver con Gaby) 
+
+-------------------------
+FINALIZADAS
+
+NICO 10_Rediccionar el header en Mobile
+NICO        2_Mostrar errrores de login, recupero de usuario, olvido/bloqueo de clave
+NICO esta la tarea en el sprint        3_terminar pantallas mobile
