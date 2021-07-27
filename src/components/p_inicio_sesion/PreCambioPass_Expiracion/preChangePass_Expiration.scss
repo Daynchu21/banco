@@ -1,0 +1,62 @@
+@import '../../../styles/buttons';
+@import '../../../styles/colors';
+@import '../../../styles/thypography';
+#containerChangePass{
+    background-image: url("../../../assets/imagenes/fondo.png");
+    min-height: 140vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-width: 100vh;
+    background-color: $color-white-OB;    
+}
+
+.mbChangePass{
+    margin-bottom: 0em
+}
+
+#containerformChangePass {
+    background: $color-white-OB;
+    border-radius: 0.5em;
+    max-width: 27em;
+    min-width: min-content;
+    width: 30%;
+    display: grid;
+    grid-template-rows: repeat(1, 1fr);
+    grid-gap: 2em;
+    margin: 5.5em auto 0;
+    place-content: center;
+    text-align: center;
+    padding: 0.75em 1em 0.75em 1em;
+}
+
+#FormContainerChangePass{
+    display: grid;
+    justify-items: center;
+    // grid-template-rows: repeat(6, 1fr);
+    // grid-template-rows: 2fr repeat(4, 1fr);
+    // align-items: center;
+    margin-left: 3em;//48px;
+    margin-right: 3em;//48px;
+    grid-gap: 0.5em;
+} 
+
+#logoChangePass{
+    background-color: $color-grey-OB;
+     height:9.375em;
+     width:9.375em;
+     margin-left:74
+}
+
+@media (max-width: 639px) {
+    #containerChangePass{
+        background-image: none;
+        /* min-height: 140vh; */
+        min-width: inherit;  
+        display: grid; 
+    }
+
+    #containerformChangePass
+    {
+        grid-template-rows: repeat(2, 1fr);
+    }
+}

@@ -1,6 +1,6 @@
 import './login.scss'
 import './../modulos/button/button.scss'
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
 import { useDispatch,useSelector } from "react-redux";
 import { login } from "../../actions/auth";
 import { Redirect,Link } from "react-router-dom";
@@ -23,7 +23,7 @@ export default function Login() {
     const [passShow,SetpassShow] = useState(false)
     const [userShow,SetuserShow] = useState(false)
     const [borderError, setBorderError] = useState(false);
-
+    const [errorNet, setErrorNet] = useState(false);
 
    const [Enviado,SetEnviado] = useState(false)
    const data = useSelector((state) => state.auth )
@@ -45,7 +45,31 @@ export default function Login() {
     }
     }
 
-  const  handleSubmit= () => {
+    //useEffect(() => {
+        /* dispatch(isOnline());
+       
+        console.log('mensaje', message.message) */
+       
+        /* if(message.message == "200"){            
+            setBorderError(false);
+        }else{
+            setError(true);
+        } */
+
+        /* switch(message.message) {
+            case '200':
+                console.log('case1');
+                setBorderError(false);
+            case 'undefined':
+                setError(true);
+            case 'CLAVE_INVALIDA':
+                console.log('case4');
+            default:
+              return console.log('default');
+          } */
+    //});
+
+  const  handleSubmit= () => {    
     SetEnviado(true)
     if (!DatosUsuario.Pass && !DatosUsuario.Usuario && !DatosUsuario.Documento)
     {
@@ -54,15 +78,16 @@ export default function Login() {
     }else
     {
         dispatch(login(DatosUsuario.Documento,DatosUsuario.Usuario,DatosUsuario.Pass))
-        .then(() => {
+        .then(result => {
             setBorderError(false);
+            setErrorNet(true);
+             
             // props.history.push("/");
            // window.location.reload();
-          })
-          .catch(() => {
-            setBorderError(false);
-          });
-
+          })    
+          .catch(
+          );
+        
 
     //    axios.post('http://backend-unificado-canales-desa.appd.bh.com.ar/ob/api/login', {
     //     usuario: DatosUsuario.Usuario,
@@ -92,10 +117,10 @@ const ocultarUsuario = () => {
 }
 return(
     <div >
-    {data.user !== null ? <Redirect to={{pathname: '/MultipleCuit'}}/>   :
+    {  data.user !== null ? <Redirect to={{pathname: '/MultipleCuit'}}/>   :
     // isDesktopOrLaptop && 
     // {/* <div> style={{width: "1440px",height: "1024px",color:"black", backgroundColor:"black"}}> */}
-    ( validaciones.validaciones !== null ? <Redirect to={{pathname: '/Vencimiento_contraseña'}}/> :
+    (validaciones.validaciones !== null ? <Redirect to={{pathname: '/ChangePassExpiration'}}/> :
    
     <div id="container">
          {console.log(validaciones)}
@@ -126,6 +151,10 @@ return(
                     <label onClick={() => {ocultarContraseña()}} id="inputIm">
                     {passShow ? <img src={eye_open} alt="ojo" style={{marginBottom: "-0.5em", marginLeft: "-3em"}} /> : <img src={eye_close} alt="ojo" style={{marginBottom: "-1em", marginLeft: "-3em"}}/> }
                     </label>  
+                    
+                    {                        
+                        errorNet ? <Redirect to={{pathname: '/error'}}/> : ''
+                    }
 
                     { (message.message !== null) ?
                         <div id="help-block" style={{color:"red", fontFamily:"Roboto"}}>Los datos ingresados son incorrectos</div>
@@ -161,6 +190,7 @@ return(
             <FooterComponent />
     </div>
            )
+    
     }
     </div>
 ) 

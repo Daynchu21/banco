@@ -1,0 +1,53 @@
+@import './../../../styles/colors';
+@import './../../../styles/buttons';
+
+#containerForm {
+    display: grid;
+    place-content: center;
+    background: $color-white-OB;
+    border-radius: 8px;
+    margin: 5.5em auto 0;
+    padding: 0.75em 1em 0.75em 1em;
+    max-width: 27em;
+    max-height: 23em;
+} 
+
+#containerformBTNVctoPass {
+    display: grid;
+    grid-template-columns: auto auto ;
+    background-color: $color-white-OB;
+}
+
+#containerText {
+    width: 350px;
+    margin-top: 4px;
+}
+
+#inputBlancoVctoPass{
+    margin-bottom: 16px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 50px 16px 16px;
+    width: 336px;
+    height: 56px;
+    left: 552px;
+    top: 356px;
+}
+
+#inputPosition{
+    position: relative;
+}
+
+#inputImg{
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    top: 16px;
+    right: 30px;
+}
+
+#error{
+    @extend #inputBlancoVctoPass;
+    border: 2px solid $color-red-OB;
+}

@@ -1,14 +1,14 @@
 import React,{useState} from 'react';
 import HeaderComponent from "../../modulos/header/header";
 import HeaderMobile from '../../modulos/headerMobile/headerMobile'
-import "./vencimiento_pass.scss"
+import "./changePass_expiration.scss"
 import eye_open from "../../../assets/iconos/eye_open.svg"
 import eye_close from "../../../assets/iconos/eye_close.svg"
 import { Link,Redirect } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { recuperoClaveExpirada,recuperoClaveOlvido } from "../../../actions/validaciones/recupero";
 
-export default function Vcontraseña () {
+export default function ChangePassExpiration () {
     const [btnDisabled, setbtnDisabled] = useState(false);
     const [tipo, setTipo] = useState(false);
     const [borderError, setBorderError] = useState(false);
@@ -86,7 +86,7 @@ export default function Vcontraseña () {
                     </h4>
                 </div>
                 <div id="containerformBTNVctoPass">
-                    <div className="btnCancelMob">
+                    <div>
                         <Link to="/Login" replace >
                             <button id="buttonWhite">Cancelar</button>
                         </Link>                    
@@ -95,7 +95,6 @@ export default function Vcontraseña () {
                         <button 
                             id="buttonGreen"
                             disabled={!btnDisabled}
-                            className="btnContinueVMob"
                             onClick={() => {validarContraseña()}}>
                             Continuar
                         </button>

@@ -1,0 +1,15 @@
+@import './../../styles/buttons';
+@import './../../styles/colors';
+
+#containerError{
+    display: grid;
+    place-content: center;
+    background: $color-white-OB;
+    border-radius: 8px;
+    margin: 5.5em auto 0;
+    padding: 0.75em 1em 0.75em 1em;
+    max-width: 27em;
+    max-height: 23em;  
+    text-align: center   
+}
+

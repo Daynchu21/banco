@@ -1,10 +1,10 @@
-import React,{useState} from "react"
+import React,{useState,useEffect} from "react"
 import HeaderComponent from "../../modulos/header/header"
 import "./recuperacion_metodos.scss"
 import { useLocation } from "react-router-dom";
 import { Link,Redirect } from 'react-router-dom';
 import { useDispatch,useSelector } from "react-redux";
-import {validarToken} from "../../../actions/validaciones/recupero"
+import {validarToken,validarTokenTCO} from "../../../actions/validaciones/recupero"
 import HeaderMobile from '../../modulos/headerMobile/headerMobile'
 
 function Sms (props){
@@ -66,27 +66,56 @@ export default function Rmetodos()
 {
     const [btnDisabled, setbtnDisabled] = useState(false);
     const location = useLocation()
-    const [token,setToken] = useState("")
-  const { codigo,descripcion } = location.state
-//   const { message } = useSelector((state) => state.message);
+
+    const [DatosUsuario,SetDatosUsuarios] = useState({
+        token: '',
+        T1: '',
+        T2: ''
+    })
   const data = useSelector((state) => state.retrieve )
+
+    useEffect(() => {
+        if(data.user !== null)
+        {
+            setT1(data.user.coordenada1)
+            setT2(data.user.coordenada2)
+        }
+      },[data.user]);
+
+    // const [token,setToken] = useState("")
+    const [T1,setT1] = useState("")
+    const [T2,setT2] = useState("")
+  const { codigo,descripcion } = location.state
+// var codigo ="TARJETA_COORDENADAS"
+// var descripcion ="pepe"
+//   const data1 = useSelector((state) => state.retrieve);
     const dispatch = useDispatch();
 
   const validarMetodoSeleccionado = () =>{
-    dispatch(validarToken(token.token))
+      if(codigo === "TARJETA_COORDENADAS")
+      {
+        dispatch(validarTokenTCO(DatosUsuario.T1,DatosUsuario.T2))
+      }else
+      {
+        dispatch(validarToken(DatosUsuario.token,codigo))
+      }
     
   }
 
   const handleChange =(e) =>{
-    setToken({
-        ...token,
+    SetDatosUsuarios({
+        ...DatosUsuario,
         [e.target.name] : e.target.value
     })
 
-    if(token !== ''){
+    if(DatosUsuario.T2 !== '' ||  DatosUsuario.T1 !== '' || DatosUsuario.token !== ''){
         setbtnDisabled(true);
     } 
     }
+
+
+
+
 
     return (
         <div>
@@ -100,16 +129,36 @@ export default function Rmetodos()
             </div>
             <div id="ContainerRMetodos">
                  <div>
-        {   (codigo === "SMS_TOKEN" && <Sms name={descripcion}/>) 
-        || (codigo === "SOFT_TOKEN" && <SoftToken name={descripcion}/>)
-        || (codigo === "TARJETA_COORDENADAS" && <TCordenadas name={descripcion}/>)
-        || (codigo === "EMAIL_TOKEN" && <Email name={descripcion}/>)
+        {   (codigo === "SMS_TOKEN" && (<div><Sms name={descripcion}/>
+            <div>
+         <input placeholder="Código de acceso" id="Inputs" name="token" onChange={handleChange}></input>
+         </div>
+                                        </div>) ) 
+        || (codigo === "SOFT_TOKEN" && (<div><SoftToken name={descripcion}/>
+             <div>
+         <input placeholder="Código de acceso" id="Inputs" name="token" onChange={handleChange}></input>
+         </div>
+                                        </div>))
+        || (codigo === "TARJETA_COORDENADAS" && (<div ><TCordenadas name={descripcion}/> <div style={{"display": "grid", 
+        "grid-gap": "1em",
+        "grid-template-columns": "repeat(2,4rem)",
+        "justify-content": "center",
+       " text-align":" -webkit-center"}}>
+            <input placeholder={T1} id="Inputs" name="T1" onChange={handleChange}></input>
+            <input placeholder={T2} id="Inputs" name="T2" onChange={handleChange}></input>
+            </div>
+                                           </div>))
+        || (codigo === "EMAIL_TOKEN" && (<div><Email name={descripcion}/>
+         <div>
+         <input placeholder="Código de acceso" id="Inputs" name="token" onChange={handleChange}></input>
+         </div>
+                                        </div>))
         }
         </div>
 
-                     <div>
+                     {/* <div>
                      <input placeholder="Código de acceso" id="Inputs" name="token" onChange={handleChange}></input>
-                 </div>
+                 </div> */}
                  <div id="buttons">
                     <div className="btnCancelMob">
                         <Link to={location => ({ ...location, pathname: "/ValidaMetodos" })} >
